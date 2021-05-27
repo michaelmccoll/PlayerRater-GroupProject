@@ -7,6 +7,7 @@ import com.sun.imageio.plugins.jpeg.JPEG;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="teams")
@@ -37,11 +38,12 @@ public class Team {
     private JPEG badge;
 //    imageio (from jav
 
-    @OneToMany(mappedBy="")
-    @JsonIgnoreProperties({})
+    @OneToMany(mappedBy="team")
+    @JsonIgnoreProperties({"team"})
     private List<Match> matches;
 
-    @Column(name="players")
+    @OneToMany(mappedBy="team")
+    @JsonIgnoreProperties({"team"})
     private List<Player> players;
 
     public Team(String name, String location, String league, String primaryColour, String secondaryColour, JPEG badge) {
@@ -53,6 +55,10 @@ public class Team {
         this.badge = badge;
         this.matches = new ArrayList<>();
         this.players = new ArrayList<>();
+    }
+
+    public Team(){
+
     }
 
     public Long getId() {
@@ -110,19 +116,19 @@ public class Team {
         this.badge = badge;
     }
 
-    public ArrayList<Match> getMatches() {
+    public List<Match> getMatches() {
         return matches;
     }
 
-    public void setMatches(ArrayList<Match> matches) {
+    public void setMatches(List<Match> matches) {
         this.matches = matches;
     }
 
-    public ArrayList<Player> getPlayers() {
+    public List<Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(ArrayList<Player> players) {
+    public void setPlayers(List<Player> players) {
         this.players = players;
     }
 }

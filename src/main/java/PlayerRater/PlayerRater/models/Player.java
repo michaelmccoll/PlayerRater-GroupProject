@@ -1,39 +1,102 @@
 package PlayerRater.PlayerRater.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name="players")
 
 public class Player {
 
+    @Id
+    @GeneratedValue
+    @Column(name="id")
     private Long id;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name="age")
     private Integer age;
+
+    @Column(name="position")
     private String position;
+
+    @Column(name="totalGoals")
     private Integer totalGoals;
-    private Integer totalAssist;
-    private Integer totalCleansheets;
+
+    @Column(name="totalAssists")
+    private Integer totalAssists;
+
+    @Column(name="totalCleanSheets")
+    private Integer totalCleanSheets;
+
+    @Column(name="management")
     private Boolean management;
+
+    @Column(name="totalYellowCards")
     private Integer totalYellowCards;
+
+    @Column(name="totalRedCards")
     private Integer totalRedCards;
-    private ArrayList<Rater> ratings;
+
+    @Column(name="ratings")
+    private ArrayList<Integer> ratings;
+
+    @Column(name="totalAwards")
     private Integer totalAwards;
+
+    @ManyToOne
+    @JoinColumn(name="team_id", nullable=false)
+    @JsonIgnoreProperties({"players"})
+    private Team team;
+
+    @ManyToMany
+    @JsonIgnoreProperties({"players"})
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "players_matches",
+            joinColumns = { @JoinColumn(
+                    name = "player_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = { @JoinColumn(
+                    name = "match_id",
+                    nullable = false,
+                    updatable = false)
+            }
+    )
+    private List<Match> matches;
 
 
     public Player(
             String name, Integer age, String position, Integer totalGoals,
-            Integer totalAssist, Integer totalCleansheets, Boolean management,
-            Integer totalYellowCards, Integer totalRedCards, ArrayList<Rater> ratings,
-            Integer totalAwards) {
+            Integer totalAssists, Integer totalCleanSheets, Boolean management,
+            Integer totalYellowCards, Integer totalRedCards,
+            Integer totalAwards, Team team) {
         this.name = name;
         this.age = age;
         this.position = position;
         this.totalGoals = totalGoals;
-        this.totalAssist = totalAssist;
-        this.totalCleansheets = totalCleansheets;
+        this.totalAssists = totalAssists;
+        this.totalCleanSheets = totalCleanSheets;
         this.management = management;
         this.totalYellowCards = totalYellowCards;
         this.totalRedCards = totalRedCards;
-        this.ratings = ratings;
+        this.ratings = new ArrayList<>();
         this.totalAwards = totalAwards;
+        this.team = team;
+        this.matches = new ArrayList<>();
+    }
+
+    public Player(){
+
     }
 
     public Long getId() {
@@ -75,20 +138,20 @@ public class Player {
         this.totalGoals = totalGoals;
     }
 
-    public Integer getTotalAssist() {
-        return totalAssist;
+    public Integer getTotalAssists() {
+        return totalAssists;
     }
 
-    public void setTotalAssist(Integer totalAssist) {
-        this.totalAssist = totalAssist;
+    public void setTotalAssists(Integer totalAssist) {
+        this.totalAssists = totalAssists;
     }
 
-    public Integer getTotalCleansheets() {
-        return totalCleansheets;
+    public Integer getTotalCleanSheets() {
+        return totalCleanSheets;
     }
 
-    public void setTotalCleansheets(Integer totalCleansheets) {
-        this.totalCleansheets = totalCleansheets;
+    public void setTotalCleanSheets(Integer totalCleanSheets) {
+        this.totalCleanSheets = totalCleanSheets;
     }
 
     public Boolean getManagement() {
@@ -115,19 +178,35 @@ public class Player {
         this.totalRedCards = totalRedCards;
     }
 
-    public ArrayList<Rater> getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(ArrayList<Rater> ratings) {
-        this.ratings = ratings;
-    }
-
     public Integer getTotalAwards() {
         return totalAwards;
     }
 
     public void setTotalAwards(Integer totalAwards) {
         this.totalAwards = totalAwards;
+    }
+
+    public ArrayList<Integer> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(ArrayList<Integer> ratings) {
+        this.ratings = ratings;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public List<Match> getMatches() {
+        return this.matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
 }

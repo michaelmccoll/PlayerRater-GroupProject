@@ -1,22 +1,34 @@
 package PlayerRater.PlayerRater.models;
 
+import javax.persistence.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@Entity
+@Table(name="matches")
 public class Match {
 
+    @Id
+    @GeneratedValue
+    @Column(name="id")
     private Long id;
+
+    @Column(name="opposition")
     private String opposition;
+
+    @Column(name="venue")
     private String venue;
+
     private List<Player> teamsheet;
+
     private ArrayList<Integer> score;
     private HashMap<Player, Integer> goals;
     private HashMap<Player, Integer> assists;
     private HashMap<Player, Integer> yellowCards;
     private HashMap<Player, Integer> redCards;
-
+    private HashMap<Player, Integer> ratings;
 
     public Match(String opposition, String venue) {
         this.opposition = opposition;
@@ -27,6 +39,11 @@ public class Match {
         this.assists = new HashMap<>();
         this.yellowCards = new HashMap<>();
         this.redCards = new HashMap<>();
+        this.ratings = new HashMap<>();
+    }
+
+    public Match(){
+
     }
 
     public Long getId() {
@@ -99,5 +116,13 @@ public class Match {
 
     public void setRedCards(HashMap<Player, Integer> redCards) {
         this.redCards = redCards;
+    }
+
+    public HashMap<Player, Integer> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(HashMap<Player, Integer> ratings) {
+        this.ratings = ratings;
     }
 }

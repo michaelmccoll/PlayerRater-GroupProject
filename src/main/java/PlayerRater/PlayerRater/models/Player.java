@@ -80,14 +80,14 @@ public class Player {
         this.name = name;
         this.age = age;
         this.position = position;
-        this.totalGoals = null;
-        this.totalAssists = null;
-        this.totalCleanSheets = null;
+        this.totalGoals = 0;
+        this.totalAssists = 0;
+        this.totalCleanSheets = 0;
         this.management = management;
-        this.totalYellowCards = null;
-        this.totalRedCards = null;
+        this.totalYellowCards = 0;
+        this.totalRedCards = 0;
         this.ratings = new ArrayList<>();
-        this.totalAwards = null;
+        this.totalAwards = 0;
         this.team = team;
         this.matches = new ArrayList<>();
     }
@@ -205,5 +205,9 @@ public class Player {
 
     public void setMatches(List<Match> matches) {
         this.matches = matches;
+    }
+
+    public void addMatchToPlayer(Match match) {
+        this.matches.add(match);
     }
 }

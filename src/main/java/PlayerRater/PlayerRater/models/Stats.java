@@ -50,8 +50,6 @@ public class Stats {
     )
     private List<Match> matches;
 
-
-
     public Stats(Player player, Integer goals, Integer assists, Integer yellowCards, Integer redCards) {
         this.player = player;
         this.goals = goals;
@@ -121,7 +119,7 @@ public class Stats {
         this.matches = matches;
     }
 
-    public void addStatsToMatch(Match match){
+    public void addMatchToStats(Match match){
         this.matches.add(match);
     }
 }

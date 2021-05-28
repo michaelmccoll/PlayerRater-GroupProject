@@ -73,6 +73,13 @@ public class DataLoader implements ApplicationRunner {
         playerRepository.save(player7);
 
         Match match1 = new Match("Gorgie F.C.","Murrayfield",3,2,team1);
+        match1.addPlayerToTeamsheet(player1);
+        match1.addPlayerToTeamsheet(player2);
+        match1.addPlayerToTeamsheet(player3);
+        match1.addPlayerToTeamsheet(player4);
+        match1.addPlayerToTeamsheet(player5);
+        match1.addPlayerToTeamsheet(player6);
+        match1.addPlayerToTeamsheet(player7);
         matchRepository.save(match1);
 
         Match match2 = new Match("Queensferry Park Rangers","Forth Stadium",1,2,team1);
@@ -87,11 +94,15 @@ public class DataLoader implements ApplicationRunner {
         Match match5 = new Match("Morningsliders","Colinton",4,3,team1);
         matchRepository.save(match5);
 
+//        TODO SAVING stats isn't working, re-factor maybe needed to link stats to player
 //        Stats stat1 = new Stats(player1,2,1,0,0);
-////        stat1.addStatsToMatch(match1);
-//
+//        stat1.addMatchToStats(match1);
+//        match1.addStatsToMatch(stat1);
+//        player1.addMatchToPlayer(match1);
 //        statsRepository.save(stat1);
+//        matchRepository.save(match1);
 //        playerRepository.save(player1);
+
 
     }
 }

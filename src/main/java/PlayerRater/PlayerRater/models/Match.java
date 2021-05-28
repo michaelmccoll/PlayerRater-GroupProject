@@ -134,11 +134,19 @@ public class Match {
         this.teamsheet = teamsheet;
     }
 
+    public void addPlayerToTeamsheet(Player player){
+        this.teamsheet.add(player);
+    }
+
     public List<Stats> getStats() {
         return stats;
     }
 
     public void setStats(List<Stats> stats) {
         this.stats = stats;
+    }
+
+    public void addStatsToMatch(Stats stats){
+        this.stats.add(stats);
     }
 }

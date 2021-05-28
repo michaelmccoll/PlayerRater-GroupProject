@@ -76,21 +76,18 @@ public class Player {
 
 
     public Player(
-            String name, Integer age, String position, Integer totalGoals,
-            Integer totalAssists, Integer totalCleanSheets, Boolean management,
-            Integer totalYellowCards, Integer totalRedCards,
-            Integer totalAwards, Team team) {
+            String name, Integer age, String position, Boolean management, Team team) {
         this.name = name;
         this.age = age;
         this.position = position;
-        this.totalGoals = totalGoals;
-        this.totalAssists = totalAssists;
-        this.totalCleanSheets = totalCleanSheets;
+        this.totalGoals = null;
+        this.totalAssists = null;
+        this.totalCleanSheets = null;
         this.management = management;
-        this.totalYellowCards = totalYellowCards;
-        this.totalRedCards = totalRedCards;
+        this.totalYellowCards = null;
+        this.totalRedCards = null;
         this.ratings = new ArrayList<>();
-        this.totalAwards = totalAwards;
+        this.totalAwards = null;
         this.team = team;
         this.matches = new ArrayList<>();
     }

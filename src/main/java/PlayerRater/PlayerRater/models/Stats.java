@@ -16,7 +16,6 @@ public class Stats {
     @Column(name="id")
     private Long id;
 
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "player_id", referencedColumnName = "id")
     private Player player;
@@ -53,8 +52,7 @@ public class Stats {
 
 
 
-    public Stats(Long id, Player player, Integer goals, Integer assists, Integer yellowCards, Integer redCards) {
-        this.id = id;
+    public Stats(Player player, Integer goals, Integer assists, Integer yellowCards, Integer redCards) {
         this.player = player;
         this.goals = goals;
         this.assists = assists;
@@ -121,5 +119,9 @@ public class Stats {
 
     public void setMatches(List<Match> matches) {
         this.matches = matches;
+    }
+
+    public void addStatsToMatch(Match match){
+        this.matches.add(match);
     }
 }

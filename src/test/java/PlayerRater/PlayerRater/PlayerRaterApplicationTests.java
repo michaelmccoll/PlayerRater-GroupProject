@@ -9,10 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.junit.Assert.assertEquals;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class PlayerRaterApplicationTests {
+
+	@Autowired
+	StatsRepository teamRepository;
 
 	@Autowired
 	MatchRepository matchRepository;
@@ -23,9 +28,12 @@ class PlayerRaterApplicationTests {
 	@Autowired
 	StatsRepository statsRepository;
 
-
 	@Test
 	void contextLoads() {
 	}
 
+	@Test
+	public void canCreateTeam(){
+
+	}
 }

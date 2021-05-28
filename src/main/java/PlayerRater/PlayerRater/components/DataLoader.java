@@ -1,5 +1,6 @@
 package PlayerRater.PlayerRater.components;
 
+import PlayerRater.PlayerRater.models.Team;
 import PlayerRater.PlayerRater.repositories.MatchRepository;
 import PlayerRater.PlayerRater.repositories.PlayerRepository;
 import PlayerRater.PlayerRater.repositories.TeamRepository;
@@ -26,5 +27,19 @@ public class DataLoader implements ApplicationRunner {
     }
     public void run(ApplicationArguments args){
 
+        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs","Red","White",null);
+        teamRepository.save(team1);
+
+
+
     }
 }
+
+//    New Town Terriers
+//        Gorgie F.C.
+//        Queensferry Park Rangers
+//        Leith Walkers -
+//        Stockbridge United
+//        Portobello Pirates
+//        Morningsliders
+

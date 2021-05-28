@@ -49,6 +49,10 @@ public class Match {
     @Column(name = "awayScore")
     private Integer awayScore;
 
+    @ManyToOne
+    @JoinColumn(name="team_id", nullable=false)
+    @JsonIgnoreProperties({"matches"})
+    private Team team;
 
     @ManyToMany
     @JsonIgnoreProperties({"matches"})
@@ -68,13 +72,14 @@ public class Match {
     )
     private List<Stats> stats;
 
-    public Match(String opposition, String venue, Integer homeScore, Integer awayScore) {
+    public Match(String opposition, String venue, Integer homeScore, Integer awayScore, Team team) {
         this.opposition = opposition;
         this.venue = venue;
         this.homeScore = homeScore;
         this.awayScore = awayScore;
         this.teamsheet = new ArrayList<>();
         this.stats = new ArrayList<>();
+        this.team = team;
     }
 
     public Match() {
@@ -129,7 +134,6 @@ public class Match {
         this.teamsheet = teamsheet;
     }
 
-    }
     public List<Stats> getStats() {
         return stats;
     }

@@ -3,9 +3,9 @@ package PlayerRater.PlayerRater.models;
 import PlayerRater.PlayerRater.models.Match;
 import PlayerRater.PlayerRater.models.Player;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.imageio.plugins.jpeg.JPEG;
 
 import javax.persistence.*;
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,24 +35,24 @@ public class Team {
     private String secondaryColour;
 
     @Column(name="badge")
-    private JPEG badge;
+    private Blob badge;
 //    imageio (from jav
 
     @OneToMany(mappedBy="team")
-    @JsonIgnoreProperties({"team"})
+    @JsonIgnoreProperties({"teams"})
     private List<Match> matches;
 
     @OneToMany(mappedBy="team")
-    @JsonIgnoreProperties({"team"})
+    @JsonIgnoreProperties({"teams"})
     private List<Player> players;
 
-    public Team(String name, String location, String league, String primaryColour, String secondaryColour, JPEG badge) {
+    public Team(String name, String location, String league, String primaryColour, String secondaryColour, Blob badge) {
         this.name = name;
         this.location = location;
         this.league = league;
         this.primaryColour = primaryColour;
         this.secondaryColour = secondaryColour;
-        this.badge = badge;
+        this.badge = null;
         this.matches = new ArrayList<>();
         this.players = new ArrayList<>();
     }
@@ -108,11 +108,11 @@ public class Team {
         this.secondaryColour = secondaryColour;
     }
 
-    public JPEG getBadge() {
+    public Blob getBadge() {
         return badge;
     }
 
-    public void setBadge(JPEG badge) {
+    public void setBadge(Blob badge) {
         this.badge = badge;
     }
 

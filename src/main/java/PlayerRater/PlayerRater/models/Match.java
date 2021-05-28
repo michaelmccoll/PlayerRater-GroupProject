@@ -24,7 +24,6 @@ public class Match {
     @Column(name = "venue")
     private String venue;
 
-
     @ManyToMany
     @JsonIgnoreProperties({"matches"})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
@@ -49,11 +48,6 @@ public class Match {
     @Column(name = "awayScore")
     private Integer awayScore;
 
-    @ManyToOne
-    @JoinColumn(name="team_id", nullable=false)
-    @JsonIgnoreProperties({"matches"})
-    private Team team;
-
     @ManyToMany
     @JsonIgnoreProperties({"matches"})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
@@ -72,6 +66,11 @@ public class Match {
     )
     private List<Stats> stats;
 
+    @ManyToOne
+    @JoinColumn(name="team_id", nullable=false)
+    @JsonIgnoreProperties({"matches"})
+    private Team team;
+
     public Match(String opposition, String venue, Integer homeScore, Integer awayScore, Team team) {
         this.opposition = opposition;
         this.venue = venue;
@@ -89,7 +88,6 @@ public class Match {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -97,7 +95,6 @@ public class Match {
     public String getOpposition() {
         return opposition;
     }
-
     public void setOpposition(String opposition) {
         this.opposition = opposition;
     }
@@ -105,7 +102,6 @@ public class Match {
     public String getVenue() {
         return venue;
     }
-
     public void setVenue(String venue) {
         this.venue = venue;
     }
@@ -113,7 +109,6 @@ public class Match {
     public List<Player> getTeamsheet() {
         return teamsheet;
     }
-
     public Integer getHomeScore() {
         return homeScore;
     }
@@ -121,7 +116,6 @@ public class Match {
     public void setHomeScore(Integer homeScore) {
         this.homeScore = homeScore;
     }
-
     public Integer getAwayScore() {
         return awayScore;
     }
@@ -129,7 +123,6 @@ public class Match {
     public void setAwayScore(Integer awayScore) {
         this.awayScore = awayScore;
     }
-
     public void setTeamsheet(List<Player> teamsheet) {
         this.teamsheet = teamsheet;
     }
@@ -141,7 +134,6 @@ public class Match {
     public List<Stats> getStats() {
         return stats;
     }
-
     public void setStats(List<Stats> stats) {
         this.stats = stats;
     }

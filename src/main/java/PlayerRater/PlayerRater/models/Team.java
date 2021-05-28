@@ -36,7 +36,6 @@ public class Team {
 
     @Column(name="badge")
     private Blob badge;
-//    imageio (from jav
 
     @OneToMany(mappedBy="team")
     @JsonIgnoreProperties({"teams"})
@@ -64,14 +63,13 @@ public class Team {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -79,7 +77,6 @@ public class Team {
     public String getLocation() {
         return location;
     }
-
     public void setLocation(String location) {
         this.location = location;
     }
@@ -87,7 +84,6 @@ public class Team {
     public String getLeague() {
         return league;
     }
-
     public void setLeague(String league) {
         this.league = league;
     }
@@ -95,7 +91,6 @@ public class Team {
     public String getPrimaryColour() {
         return primaryColour;
     }
-
     public void setPrimaryColour(String primaryColour) {
         this.primaryColour = primaryColour;
     }
@@ -103,7 +98,6 @@ public class Team {
     public String getSecondaryColour() {
         return secondaryColour;
     }
-
     public void setSecondaryColour(String secondaryColour) {
         this.secondaryColour = secondaryColour;
     }
@@ -111,7 +105,6 @@ public class Team {
     public Blob getBadge() {
         return badge;
     }
-
     public void setBadge(Blob badge) {
         this.badge = badge;
     }
@@ -119,7 +112,6 @@ public class Team {
     public List<Match> getMatches() {
         return matches;
     }
-
     public void setMatches(List<Match> matches) {
         this.matches = matches;
     }
@@ -127,8 +119,11 @@ public class Team {
     public List<Player> getPlayers() {
         return players;
     }
-
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public void addMatchToTeam(Match match){
+        this.matches.add(match);
     }
 }

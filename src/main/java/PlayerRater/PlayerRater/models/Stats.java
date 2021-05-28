@@ -66,7 +66,6 @@ public class Stats {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -74,7 +73,6 @@ public class Stats {
     public Player getPlayer() {
         return player;
     }
-
     public void setPlayer(Player player) {
         this.player = player;
     }
@@ -82,7 +80,6 @@ public class Stats {
     public Integer getGoals() {
         return goals;
     }
-
     public void setGoals(Integer goals) {
         this.goals = goals;
     }
@@ -90,7 +87,6 @@ public class Stats {
     public Integer getAssists() {
         return assists;
     }
-
     public void setAssists(Integer assists) {
         this.assists = assists;
     }
@@ -98,7 +94,6 @@ public class Stats {
     public Integer getYellowCards() {
         return yellowCards;
     }
-
     public void setYellowCards(Integer yellowCards) {
         this.yellowCards = yellowCards;
     }
@@ -106,7 +101,6 @@ public class Stats {
     public Integer getRedCards() {
         return redCards;
     }
-
     public void setRedCards(Integer redCards) {
         this.redCards = redCards;
     }
@@ -114,7 +108,6 @@ public class Stats {
     public List<Match> getMatches() {
         return matches;
     }
-
     public void setMatches(List<Match> matches) {
         this.matches = matches;
     }

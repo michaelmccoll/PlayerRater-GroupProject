@@ -1,5 +1,8 @@
 package PlayerRater.PlayerRater.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -12,37 +15,69 @@ public class Match {
 
     @Id
     @GeneratedValue
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name="opposition")
+    @Column(name = "opposition")
     private String opposition;
 
-    @Column(name="venue")
+    @Column(name = "venue")
     private String venue;
 
+
+    @ManyToMany
+    @JsonIgnoreProperties({"matches"})
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "players_matches",
+            joinColumns = { @JoinColumn(
+                    name = "match_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = { @JoinColumn(
+                    name = "player_id",
+                    nullable = false,
+                    updatable = false)
+            }
+    )
     private List<Player> teamsheet;
 
-    private ArrayList<Integer> score;
-    private HashMap<Player, Integer> goals;
-    private HashMap<Player, Integer> assists;
-    private HashMap<Player, Integer> yellowCards;
-    private HashMap<Player, Integer> redCards;
-    private HashMap<Player, Integer> ratings;
+    @Column(name = "homeScore")
+    private Integer homeScore;
 
-    public Match(String opposition, String venue) {
+    @Column(name = "awayScore")
+    private Integer awayScore;
+
+
+    @ManyToMany
+    @JsonIgnoreProperties({"matches"})
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "stats_matches",
+            joinColumns = { @JoinColumn(
+                    name = "match_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = { @JoinColumn(
+                    name = "stats_id",
+                    nullable = false,
+                    updatable = false)
+            }
+    )
+    private List<Stats> stats;
+
+    public Match(String opposition, String venue, Integer homeScore, Integer awayScore) {
         this.opposition = opposition;
         this.venue = venue;
+        this.homeScore = homeScore;
+        this.awayScore = awayScore;
         this.teamsheet = new ArrayList<>();
-        this.score = new ArrayList<>();
-        this.goals = new HashMap<>();
-        this.assists = new HashMap<>();
-        this.yellowCards = new HashMap<>();
-        this.redCards = new HashMap<>();
-        this.ratings = new HashMap<>();
+        this.stats = new ArrayList<>();
     }
 
-    public Match(){
+    public Match() {
 
     }
 
@@ -74,55 +109,32 @@ public class Match {
         return teamsheet;
     }
 
+    public Integer getHomeScore() {
+        return homeScore;
+    }
+
+    public void setHomeScore(Integer homeScore) {
+        this.homeScore = homeScore;
+    }
+
+    public Integer getAwayScore() {
+        return awayScore;
+    }
+
+    public void setAwayScore(Integer awayScore) {
+        this.awayScore = awayScore;
+    }
+
     public void setTeamsheet(List<Player> teamsheet) {
         this.teamsheet = teamsheet;
     }
 
-    public ArrayList<Integer> getScore() {
-        return score;
+    }
+    public List<Stats> getStats() {
+        return stats;
     }
 
-    public void setScore(ArrayList<Integer> score) {
-        this.score = score;
-    }
-
-    public HashMap<Player, Integer> getGoals() {
-        return goals;
-    }
-
-    public void setGoals(HashMap<Player, Integer> goals) {
-        this.goals = goals;
-    }
-
-    public HashMap<Player, Integer> getAssists() {
-        return assists;
-    }
-
-    public void setAssists(HashMap<Player, Integer> assists) {
-        this.assists = assists;
-    }
-
-    public HashMap<Player, Integer> getYellowCards() {
-        return yellowCards;
-    }
-
-    public void setYellowCards(HashMap<Player, Integer> yellowCards) {
-        this.yellowCards = yellowCards;
-    }
-
-    public HashMap<Player, Integer> getRedCards() {
-        return redCards;
-    }
-
-    public void setRedCards(HashMap<Player, Integer> redCards) {
-        this.redCards = redCards;
-    }
-
-    public HashMap<Player, Integer> getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(HashMap<Player, Integer> ratings) {
-        this.ratings = ratings;
+    public void setStats(List<Stats> stats) {
+        this.stats = stats;
     }
 }

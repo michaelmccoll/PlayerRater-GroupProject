@@ -5,6 +5,7 @@ import PlayerRater.PlayerRater.models.Player;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.awt.*;
 import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +30,10 @@ public class Team {
     private String league;
 
     @Column(name="primary_colour")
-    private String primaryColour;
+    private Color primaryColour;
 
     @Column(name="secondary_colour")
-    private String secondaryColour;
+    private Color secondaryColour;
 
     @Column(name="badge")
     private Blob badge;
@@ -45,7 +46,7 @@ public class Team {
     @JsonIgnoreProperties({"teams"})
     private List<Player> players;
 
-    public Team(String name, String location, String league, String primaryColour, String secondaryColour, Blob badge) {
+    public Team(String name, String location, String league, Color primaryColour, Color secondaryColour, Blob badge) {
         this.name = name;
         this.location = location;
         this.league = league;
@@ -88,17 +89,17 @@ public class Team {
         this.league = league;
     }
 
-    public String getPrimaryColour() {
+    public Color getPrimaryColour() {
         return primaryColour;
     }
-    public void setPrimaryColour(String primaryColour) {
+    public void setPrimaryColour(Color primaryColour) {
         this.primaryColour = primaryColour;
     }
 
-    public String getSecondaryColour() {
+    public Color getSecondaryColour() {
         return secondaryColour;
     }
-    public void setSecondaryColour(String secondaryColour) {
+    public void setSecondaryColour(Color secondaryColour) {
         this.secondaryColour = secondaryColour;
     }
 
@@ -121,6 +122,10 @@ public class Team {
     }
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public void addPlayerToTeam(Player player){
+        this.players.add(player);
     }
 
     public void addMatchToTeam(Match match){

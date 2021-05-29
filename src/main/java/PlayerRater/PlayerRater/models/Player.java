@@ -18,8 +18,11 @@ public class Player {
     @Column(name="id")
     private Long id;
 
-    @Column(name="name")
-    private String name;
+    @Column(name="first_name")
+    private String first_name;
+
+    @Column(name="second_name")
+    private String second_name;
 
     @Column(name="age")
     private Integer age;
@@ -72,8 +75,9 @@ public class Player {
     private Integer totalAwards;
 
     public Player(
-            String name, Integer age, String position, Boolean management, Team team) {
-        this.name = name;
+            String first_name, String second_name, Integer age, String position, Boolean management, Team team) {
+        this.first_name = first_name;
+        this.second_name = second_name;
         this.age = age;
         this.position = position;
         this.management = management;
@@ -102,11 +106,18 @@ public class Player {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirst_name() {
+        return first_name;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getSecond_name() {
+        return second_name;
+    }
+    public void setSecond_name(String second_name) {
+        this.second_name = second_name;
     }
 
     public Integer getAge() {

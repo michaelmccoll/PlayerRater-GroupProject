@@ -50,9 +50,16 @@ class PlayerRaterApplicationTests {
 		assertEquals(5,found.size());
 	}
 
+	@Test
+	public void	canGetTeamsByLeague(){
+		List<Team> found = teamRepository.findAllTeamsByLeague("Edinburgh Amateurs");
+		assertEquals(6,found.size());
+	}
+
 //	@Test
-//	public void	canGetTeamsheetByMatchesID(){
-//		List<Match> found = matchRepository.findTeamsheetByMatches_id(14L);
+//	public void	canGetTeamsheetByMatch(){
+//		Match testMatch = matchRepository.getById(14L);
+//		List<Match> found = matchRepository.findTeamsheetByMatches(testMatch);
 //		assertEquals(5,found.size());
 //	}
 }

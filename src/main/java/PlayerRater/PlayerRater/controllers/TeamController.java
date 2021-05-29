@@ -28,4 +28,15 @@ public class TeamController {
         teamRepository.save(team);
         return new ResponseEntity<>(team,HttpStatus.CREATED);
     }
+
+    @GetMapping(value = "/team")
+    public ResponseEntity getAllTeamsAndFilters(
+            @RequestParam(required = false, name = "name") String name
+    ){
+        if (name != null){
+            return new ResponseEntity(teamRepository.findTeamByName(name), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(teamRepository.findAll(), HttpStatus.OK);
+    }
+
 }

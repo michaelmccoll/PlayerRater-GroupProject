@@ -1,3 +1,6 @@
+import React from 'react';
+import './Matches.css';
+
 const Matches = () => {
     return(
         <>

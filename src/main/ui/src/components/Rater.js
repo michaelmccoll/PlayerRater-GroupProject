@@ -1,3 +1,6 @@
+import React from 'react';
+import './Rater.css';
+
 const Rater = () => {
     return(
         <>

@@ -1,5 +1,6 @@
 
 import './App.css';
+import React from 'react';
 // import {useState} from 'react';
 import {BrowserRouter as Router, Route, Switch}  from 'react-router-dom';
 import NavBar from './components/NavBar';
@@ -9,7 +10,6 @@ import Rater from './components/Rater';
 import Matches from './components/Matches';
 import Profile from './components/Profile';
 import Error from './components/Error';
-
 
 function App() {
   return (

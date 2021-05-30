@@ -1,0 +1,28 @@
+.navbar {
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  .team {
+    background-image: url('../imgs/icons/team.png');
+  }
+
+  .stats {
+    background-image: url('../imgs/icons/stats.png');
+  }
+
+  .rater {
+    background-image: url('../imgs/icons/rater.png');
+  }
+
+  .matches {
+    background-image: url('../imgs/icons/matches.png');
+  }
+
+  .profile {
+    background-image: url('../imgs/icons/profile.png');
+  }

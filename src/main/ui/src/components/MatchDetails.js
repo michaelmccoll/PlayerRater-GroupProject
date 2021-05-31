@@ -6,7 +6,7 @@ const MatchDetails = ({match}) =>{
         return(
         <>
             <hr/>
-            <h3>{match.team} {match.home_score} - {match.away_score} {match.opposition}</h3>
+            <h4>{match.team} {match.home_score} - {match.away_score} {match.opposition}</h4>
         </>
         )
     }
@@ -14,7 +14,7 @@ const MatchDetails = ({match}) =>{
     return(
         <>
             <hr/>
-            <h3>{match.opposition} {match.home_score} - {match.home_score} {match.team}</h3>
+            <h4>{match.opposition} {match.home_score} - {match.home_score} {match.team}</h4>
         </>
     )
 }

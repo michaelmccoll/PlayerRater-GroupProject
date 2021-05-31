@@ -3,8 +3,8 @@ import './Stats.css';
 
 const Stats = () => (
     <div>
-        <h2>Stats Page</h2>
-        <p>All the stats go here...</p>
+        <h2>Player Stats</h2>
+        <h4>All the stats go here...</h4>
     </div>
 );
 

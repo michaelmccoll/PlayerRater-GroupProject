@@ -33,7 +33,6 @@ const Matches = () => {
 
     // const [loaded, setLoaded] = useState(false);
 
-    // When backend API's are ready
     // const getMatches = () => {
     //     fetch(`https://localhost:8080/matches`)
     //     .then(res => res.json())
@@ -47,7 +46,7 @@ const Matches = () => {
 
     return(
         <>
-            <h2>Matches Page</h2>
+            <h2>Latest Matches</h2>
             <MatchList matches={matches}/>
         </>
     )

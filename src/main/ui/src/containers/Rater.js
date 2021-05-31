@@ -29,9 +29,22 @@ const Rater = () => {
         }
     ])
 
+    // const [loaded, setLoaded] = useState(false);
+
+    // const getTeamsheet = () => {
+    //     fetch(`https://localhost:8080/matches/{id}/teamsheet`)
+    //     .then(res => res.json())
+    //     .then(data => setTeamsheet(data))
+    //     .then(() => setLoaded(true))
+    // }
+
+    // useEffect(()=>{
+    //     getTeamsheet();
+    // })
+
     return(
         <>
-            <h2>Ratings vs Gorgie FC</h2>
+            <h2>Rate Teammates vs Gorgie FC</h2>
             <RaterList teamsheet={teamsheet}/>
         </>
     )

@@ -4,67 +4,107 @@
     background-color: white;
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 12px;
+    width:55px;
+    height:55px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .games{
-    grid-area: badge;
+    grid-area: games;
     background-color: white;
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 12px;
+    width:55px;
+    height:55px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .goals{
-    grid-area: badge;
+    grid-area: goals;
     background-color: white;
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 12px;
+    width:55px;
+    height:55px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .assists{
-    grid-area: badge;
+    grid-area: assists;
     background-color: white;
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 12px;
+    width:55px;
+    height:55px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .POTM{
-    grid-area: badge;
+    grid-area: POTM;
     background-color: white;
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 12px;
+    width:55px;
+    height:55px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .firstName{
-    grid-area: badge;
+    grid-area: firstName;
     background-color: white;
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 12px;
+    width:55px;
+    height:55px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .secondName{
-    grid-area: badge;
+    grid-area: secondName;
     background-color: white;
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 12px;
+    width:55px;
+    height:55px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .rating{
-    grid-area: badge;
+    grid-area: rating;
     background-color: white;
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 12px;
+    width:55px;
+    height:55px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pic{
-    grid-area: badge;
+    grid-area: pic;
     background-color: white;
     margin: 2px;
     padding: 2px;
@@ -74,12 +114,16 @@
 .profileCard{
     display: grid;
     background-color: red;
+    border-style: solid;
+    border-color: black;
+    border-width: 20px;
+    padding: 6px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 90px 90px 90px 90px 90px;
     grid-template-areas:
         "badge pic pic pic games"
         "pic pic pic pic goals"
         "pic pic pic pic assists"
         "pic pic pic pic PTOM"
-        "firstName secondName secondName secondName rating"
+        "firstName secondName secondName secondName rating";
 }

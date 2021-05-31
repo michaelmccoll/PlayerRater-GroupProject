@@ -5,7 +5,7 @@ import './RaterPlayer.css';
 const RaterPlayer = ({team}) => {
     return(
         <>
-            <h3>{team.first_name} {team.second_name}</h3>
+            <h4>{team.first_name} {team.second_name}</h4>
             <div className="ratings">
                 <img className="star" src={starFull}></img>
                 <img className="star" src={starFull}></img>

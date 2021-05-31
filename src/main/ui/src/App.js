@@ -3,18 +3,20 @@ import './App.css';
 import React from 'react';
 // import {useState} from 'react';
 import {BrowserRouter as Router, Route, Switch}  from 'react-router-dom';
+import Header from './components/Header';
 import NavBar from './components/NavBar';
-import Team from './components/Team';
-import Stats from './components/Stats';
-import Rater from './components/Rater';
-import Matches from './components/Matches';
-import Profile from './components/Profile';
-import Error from './components/Error';
+import Team from './containers/Team';
+import Stats from './containers/Stats';
+import Rater from './containers/Rater';
+import Matches from './containers/Matches';
+import Profile from './containers/Profile';
+import Error from './containers/Error';
 
 function App() {
   return (
     <Router>
       <>
+      <Header/>
       <NavBar/>
       <Switch>
       <Route exact path="/" component={Team}/>

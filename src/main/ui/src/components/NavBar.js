@@ -1,27 +1,32 @@
 import {Link} from 'react-router-dom';
 import './NavBar.css';
+import team from '../imgs/icons/team.png';
+import stats from '../imgs/icons/stats.png';
+import rater from '../imgs/icons/rater.png';
+import matches from '../imgs/icons/matches.png';
+import profile from '../imgs/icons/profile.png';
 
 const NavBar = () => {
     return(
-        <ul class="navbar">
-            <li class="team">
-                <Link to="/">Team</Link>
+        <ul className="navbar">
+            <li>
+                <Link to="/"><img className="team" src={team}></img></Link>
             </li>
     
-            <li class="stats">
-                <Link to="/stats">Stats</Link>
+            <li>
+                <Link to="/stats"><img className="stats" src={stats}></img></Link>
             </li>
         
-            <li class="rater">
-                <Link to="/rater">Rater</Link>
+            <li>
+                <Link to="/rater"><img className="rater" src={rater}></img></Link>
             </li>
 
-            <li class="matches">
-                <Link to="/matches">Matches</Link>
+            <li>
+                <Link to="/matches"><img className="matches" src={matches}></img></Link>
             </li>
 
-            <li class="profile">
-                <Link to="/profile">Profile</Link>
+            <li> 
+                <Link to="/profile"><img className="profile" src={profile}></img></Link>
             </li>
         </ul>
     )

@@ -47,7 +47,7 @@ const Matches = () => {
 
     return(
         <>
-            <h1>Matches Page</h1>
+            <h2>Matches Page</h2>
             <MatchList matches={matches}/>
         </>
     )

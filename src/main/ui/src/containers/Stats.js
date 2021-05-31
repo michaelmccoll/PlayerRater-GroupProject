@@ -3,7 +3,7 @@ import './Stats.css';
 
 const Stats = () => (
     <div>
-        <h1>Stats Page</h1>
+        <h2>Stats Page</h2>
         <p>All the stats go here...</p>
     </div>
 );

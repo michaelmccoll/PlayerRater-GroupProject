@@ -1,3 +1,5 @@
+import './MatchDetails.css';
+
 const MatchDetails = ({match}) =>{
 
     if (!match.venue){

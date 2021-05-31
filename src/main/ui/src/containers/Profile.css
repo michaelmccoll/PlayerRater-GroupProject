@@ -1,0 +1,85 @@
+
+.badge{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.games{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.goals{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.assists{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.POTM{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.firstName{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.secondName{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.rating{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.pic{
+    grid-area: badge;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.profileCard{
+    display: grid;
+    background-color: red;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "badge pic pic pic games"
+        "pic pic pic pic goals"
+        "pic pic pic pic assists"
+        "pic pic pic pic PTOM"
+        "firstName secondName secondName secondName rating"
+}

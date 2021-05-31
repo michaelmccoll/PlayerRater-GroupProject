@@ -17,7 +17,7 @@ const Rater = () => {
         },
         {id: 3,
         first_name: "David",
-        second_name: "Marshal",
+        second_name: "Marshall",
         },
         {id: 4,
         first_name: "Andy",
@@ -31,7 +31,7 @@ const Rater = () => {
 
     return(
         <>
-            <h2>Last Match</h2>
+            <h2>Ratings vs Gorgie FC</h2>
             <RaterList teamsheet={teamsheet}/>
         </>
     )

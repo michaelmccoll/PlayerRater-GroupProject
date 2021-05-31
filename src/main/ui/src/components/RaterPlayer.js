@@ -1,10 +1,23 @@
-import logo from '../imgs/logos/PlayerRaterLogo.png';
+import star from '../imgs/icons/rater.png';
+import starFull from '../imgs/icons/starFull.png';
+import './RaterPlayer.css';
 
 const RaterPlayer = ({team}) => {
     return(
         <>
             <h3>{team.first_name} {team.second_name}</h3>
-            <button><img className="logo" src={logo}></img></button>
+            <div className="ratings">
+                <img className="star" src={starFull}></img>
+                <img className="star" src={starFull}></img>
+                <img className="star" src={star}></img>
+                <img className="star" src={star}></img>
+                <img className="star" src={star}></img>
+                <img className="star" src={star}></img>
+                <img className="star" src={star}></img>
+                <img className="star" src={star}></img>
+                <img className="star" src={star}></img>
+                <img className="star" src={star}></img>
+            </div>
         </>
     )
 }

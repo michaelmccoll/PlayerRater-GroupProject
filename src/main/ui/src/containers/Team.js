@@ -4,7 +4,7 @@ import './Team.css';
 const Team = () => {
     return(
         <>
-            <h1>Team Page</h1>
+            <h2>Team Page</h2>
             <p>All the teams player cards go here in a grid...</p>
         </>
     )

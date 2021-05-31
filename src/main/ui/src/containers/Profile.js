@@ -4,8 +4,16 @@ import './Profile.css';
 const Profile = () => {
     return(
         <>
-            <h1>Profile Page</h1>
-            <p>The players profile card goes here...</p>
+        <div className="profileCard">
+            <h5 className="badge">Porto Pirates</h5>
+            <h5 className="games">GAMES</h5>
+            <h5 className="goals">GOALS</h5>
+            <h5 className="assists">ASSISTS</h5>
+            <h5 className="POTM">POTM</h5>
+            <h5 className="firstName">Lionel</h5>
+            <h5 className="secondName">MESSI</h5>
+            <h5 className="rating">RATING 8.4</h5>
+        </div>
         </>
     )
 }

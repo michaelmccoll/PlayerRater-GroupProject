@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import {HashRouter, Link} from 'react-router-dom';
 import './NavBar.css';
 import team from '../imgs/icons/team.png';
 import stats from '../imgs/icons/stats.png';
@@ -8,7 +8,9 @@ import profile from '../imgs/icons/profile.png';
 
 const NavBar = () => {
     return(
+        <>
         <ul className="navbar">
+        <hr/>
             <li>
                 <Link to="/"><img className="team" src={team}></img></Link>
             </li>
@@ -29,6 +31,7 @@ const NavBar = () => {
                 <Link to="/profile"><img className="profile" src={profile}></img></Link>
             </li>
         </ul>
+        </>
     )
 }
 

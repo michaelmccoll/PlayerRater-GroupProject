@@ -4,42 +4,46 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-decoration: none;
+  }
+ul {
+  padding-inline-start: 0px;
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+}
+
+li {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 16px;
   }
 
-  li {
-    display: inline;
-    margin-left: auto;
-    margin-right: auto;
-    margin: 10px;
-   }
+.team {
+  background-image: url('../imgs/icons/team.png');
+  width: 40px;
+  height: 40px;
+}
 
-  .team {
-    background-image: url('../imgs/icons/team.png');
-    width: 40px;
-    height: 40px;
-  }
+.stats {
+  background-image: url('../imgs/icons/stats.png');
+  width: 40px;
+  height: 40px;
+}
 
-  .stats {
-    background-image: url('../imgs/icons/stats.png');
-    width: 40px;
-    height: 40px;
-  }
+.rater {
+  background-image: url('../imgs/icons/rater.png');
+  width: 40px;
+  height: 40px;
+}
 
-  .rater {
-    background-image: url('../imgs/icons/rater.png');
-    width: 40px;
-    height: 40px;
-  }
+.matches {
+  background-image: url('../imgs/icons/matches.png');
+  width: 40px;
+  height: 40px;
+}
 
-  .matches {
-    background-image: url('../imgs/icons/matches.png');
-    width: 40px;
-    height: 40px;
-  }
-
-  .profile {
-    background-image: url('../imgs/icons/profile.png');
-    width: 40px;
-    height: 40px;
-  }
+.profile {
+  background-image: url('../imgs/icons/profile.png');
+  width: 40px;
+  height: 40px;
+}

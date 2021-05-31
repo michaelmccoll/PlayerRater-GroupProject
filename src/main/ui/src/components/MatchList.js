@@ -5,7 +5,7 @@ const MatchList = ({matches}) => {
     const matchNodes = matches.map(match => {
         return(
 
-            <MatchDetails match={match} key={match.id}/>
+            <MatchDetails match={match} key={match.id}></MatchDetails>
         )
     })
     return(

@@ -16,8 +16,9 @@ public class Stats {
     @Column(name="id")
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "player_id", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name="player_id", nullable=false)
+    @JsonIgnoreProperties({"stats"})
     private Player player;
 
     @Column(name="goals")

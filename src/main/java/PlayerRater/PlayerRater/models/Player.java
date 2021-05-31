@@ -38,6 +38,12 @@ public class Player {
     @JsonIgnoreProperties({"players"})
     private Team team;
 
+    @OneToMany(mappedBy = "player")
+    @JsonIgnoreProperties({"player"})
+    private List<Stats> stats;
+
+
+
 // Replace these with Stats class
     @Column(name="totalGoals")
     private Integer totalGoals;
@@ -92,6 +98,8 @@ public class Player {
         this.matches = new ArrayList<>();
         this.ratings = new ArrayList<>();
         this.totalAwards = 0;
+
+        this.stats = new ArrayList<>();
 
     }
 
@@ -208,5 +216,9 @@ public class Player {
 
     public void addMatchToPlayer(Match match) {
         this.matches.add(match);
+    }
+
+    public void addStatsToPlayer(Stats stat) {
+        this.stats.add(stat);
     }
 }

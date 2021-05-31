@@ -127,15 +127,12 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match5);
         teamRepository.save(team1);
 
-////        TODO: SAVING stats isn't working, re-factor maybe needed to link stats to player
-//        Stats stat1 = new Stats(player1,2,1,0,0);
-//        stat1.addMatchToStats(match1);
-//        match1.addStatsToMatch(stat1);
-//        player1.addMatchToPlayer(match1);
-//        statsRepository.save(stat1);
-//        matchRepository.save(match1);
-//        playerRepository.save(player1);
-
+        Stats stat1 = new Stats(player1,2,1,0,0);
+        stat1.addMatchToStats(match1);
+        match1.addStatsToMatch(stat1);
+        player1.addMatchToPlayer(match1);
+        player1.addStatsToPlayer(stat1);
+        statsRepository.save(stat1);
 
     }
 }

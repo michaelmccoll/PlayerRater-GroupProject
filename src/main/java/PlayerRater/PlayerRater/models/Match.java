@@ -8,7 +8,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-//test
+
 @Entity
 @Table(name="matches")
 public class Match {
@@ -21,8 +21,8 @@ public class Match {
     @Column(name = "opposition")
     private String opposition;
 
-    @Column(name = "venue")
-    private String venue;
+    @Column(name = "home_team")
+    private Boolean homeTeam;
 
     @ManyToMany
     @JsonIgnoreProperties({"matches"})
@@ -71,19 +71,22 @@ public class Match {
     @JsonIgnoreProperties({"matches"})
     private Team team;
 
-    public Match(String opposition, String venue, Integer homeScore, Integer awayScore, Team team) {
+    @OneToMany(mappedBy = "match")
+    @JsonIgnoreProperties({"match"})
+    private List<Rating> ratings;
+
+    public Match(String opposition, Boolean homeTeam, Integer homeScore, Integer awayScore, Team team) {
         this.opposition = opposition;
-        this.venue = venue;
+        this.homeTeam = homeTeam;
         this.homeScore = homeScore;
         this.awayScore = awayScore;
         this.teamsheet = new ArrayList<>();
         this.stats = new ArrayList<>();
         this.team = team;
+        this.ratings = new ArrayList<>();
     }
 
-    public Match() {
-
-    }
+    public Match() {}
 
     public Long getId() {
         return id;
@@ -99,12 +102,12 @@ public class Match {
         this.opposition = opposition;
     }
 
-    public String getVenue() {
-        return venue;
-    }
-    public void setVenue(String venue) {
-        this.venue = venue;
-    }
+//    public String getVenue() {
+//        return venue;
+//    }
+//    public void setVenue(String venue) {
+//        this.venue = venue;
+//    }
 
     public List<Player> getTeamsheet() {
         return teamsheet;

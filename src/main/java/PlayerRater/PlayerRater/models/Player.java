@@ -35,29 +35,15 @@ public class Player {
 
     @ManyToOne
     @JoinColumn(name="team_id", nullable=false)
-    @JsonIgnoreProperties({"players"})
+    @JsonIgnoreProperties({"players", "matches", "stats"})
     private Team team;
 
     @OneToMany(mappedBy = "player")
-    @JsonIgnoreProperties({"player"})
+    @JsonIgnoreProperties({"player", "matches"})
     private List<Stats> stats;
 
-
-
-// Replace these with Stats class
-    @Column(name="totalGoals")
-    private Integer totalGoals;
-    @Column(name="totalAssists")
-    private Integer totalAssists;
-    @Column(name="totalCleanSheets")
-    private Integer totalCleanSheets;
-    @Column(name="totalYellowCards")
-    private Integer totalYellowCards;
-    @Column(name="totalRedCards")
-    private Integer totalRedCards;
-
     @ManyToMany
-    @JsonIgnoreProperties({"players"})
+    @JsonIgnoreProperties({"teamsheet","stats"})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
             name = "players_matches",
@@ -74,11 +60,10 @@ public class Player {
     )
     private List<Match> matches;
 
-    @Column(name="ratings")
-    private ArrayList<Integer> ratings;
-
-    @Column(name="totalAwards")
-    private Integer totalAwards;
+    // nested ignore properties are not possible
+    @OneToMany(mappedBy = "player")
+    @JsonIgnoreProperties({"player", "match"})
+    private List<Rating> ratings;
 
     public Player(
             String first_name, String second_name, Integer age, String position, Boolean management, Team team) {
@@ -88,19 +73,9 @@ public class Player {
         this.position = position;
         this.management = management;
         this.team = team;
-
-        this.totalGoals = 0;
-        this.totalAssists = 0;
-        this.totalCleanSheets = 0;
-        this.totalYellowCards = 0;
-        this.totalRedCards = 0;
-
         this.matches = new ArrayList<>();
-        this.ratings = new ArrayList<>();
-        this.totalAwards = 0;
-
         this.stats = new ArrayList<>();
-
+        this.ratings = new ArrayList<>();
     }
 
     public Player(){
@@ -156,62 +131,27 @@ public class Player {
         this.team = team;
     }
 
-
-    public Integer getTotalGoals() {
-        return totalGoals;
-    }
-    public void setTotalGoals(Integer totalGoals) {
-        this.totalGoals = totalGoals;
-    }
-
-    public Integer getTotalAssists() {
-        return totalAssists;
-    }
-    public void setTotalAssists(Integer totalAssist) {
-        this.totalAssists = totalAssists;
-    }
-
-    public Integer getTotalCleanSheets() {
-        return totalCleanSheets;
-    }
-    public void setTotalCleanSheets(Integer totalCleanSheets) {
-        this.totalCleanSheets = totalCleanSheets;
-    }
-
-    public Integer getTotalYellowCards() {
-        return totalYellowCards;
-    }
-    public void setTotalYellowCards(Integer totalYellowCards) {
-        this.totalYellowCards = totalYellowCards;
-    }
-
-    public Integer getTotalRedCards() {
-        return totalRedCards;
-    }
-    public void setTotalRedCards(Integer totalRedCards) {
-        this.totalRedCards = totalRedCards;
-    }
-
-
-    public Integer getTotalAwards() {
-        return totalAwards;
-    }
-    public void setTotalAwards(Integer totalAwards) {
-        this.totalAwards = totalAwards;
-    }
-
-    public ArrayList<Integer> getRatings() {
-        return ratings;
-    }
-    public void setRatings(ArrayList<Integer> ratings) {
-        this.ratings = ratings;
-    }
-
     public List<Match> getMatches() {
         return this.matches;
     }
     public void setMatches(List<Match> matches) {
         this.matches = matches;
+    }
+
+    public List<Stats> getStats() {
+        return stats;
+    }
+
+    public void setStats(List<Stats> stats) {
+        this.stats = stats;
+    }
+
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
     }
 
     public void addMatchToPlayer(Match match) {

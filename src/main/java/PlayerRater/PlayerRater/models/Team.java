@@ -30,10 +30,10 @@ public class Team {
     private String league;
 
     @Column(name="primary_colour")
-    private Color primaryColour;
+    private String primaryColour;
 
     @Column(name="secondary_colour")
-    private Color secondaryColour;
+    private String secondaryColour;
 
     @Column(name="badge")
     private Blob badge;
@@ -46,7 +46,7 @@ public class Team {
     @JsonIgnoreProperties({"teams"})
     private List<Player> players;
 
-    public Team(String name, String location, String league, Color primaryColour, Color secondaryColour, Blob badge) {
+    public Team(String name, String location, String league, String primaryColour, String secondaryColour, Blob badge) {
         this.name = name;
         this.location = location;
         this.league = league;
@@ -89,17 +89,17 @@ public class Team {
         this.league = league;
     }
 
-    public Color getPrimaryColour() {
+    public String getPrimaryColour() {
         return primaryColour;
     }
-    public void setPrimaryColour(Color primaryColour) {
+    public void setPrimaryColour(String primaryColour) {
         this.primaryColour = primaryColour;
     }
 
-    public Color getSecondaryColour() {
+    public String getSecondaryColour() {
         return secondaryColour;
     }
-    public void setSecondaryColour(Color secondaryColour) {
+    public void setSecondaryColour(String secondaryColour) {
         this.secondaryColour = secondaryColour;
     }
 

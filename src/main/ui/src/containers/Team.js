@@ -22,11 +22,9 @@ const Team = ({teams, players, loaded, handleTeamSelect, handlePlayerSelect}) =>
 
 
     const setTeamState = (event) => {
-        // setTeamSelect(event.target.value);
         handleTeamSelect(event.target.value)
     }
     const setPlayerState = (event) => {
-        // setPlayerSelect(event.target.value);
         handlePlayerSelect(event.target.value)
     }
 
@@ -47,7 +45,7 @@ const Team = ({teams, players, loaded, handleTeamSelect, handlePlayerSelect}) =>
     return(
 
         <>
-            
+        <div className="team-container">
             <label htmlFor="teams">Select Team</label>
             <select onChange={setTeamState} name="teams" id="teams">
                 <option disabled defaultValue>Select a Team</option>
@@ -59,7 +57,8 @@ const Team = ({teams, players, loaded, handleTeamSelect, handlePlayerSelect}) =>
                 <option disabled defaultValue>Select a Player</option>
                 {playerOptionNodes}
             </select>
-            
+        </div>
+          
         </>
     )
 }

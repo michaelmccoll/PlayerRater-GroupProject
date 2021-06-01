@@ -9,8 +9,6 @@ import Profile from './Profile';
 
 const Team = ({teams, players, loaded, handleTeamSelect, handlePlayerSelect}) => {
 
-     
-
     const [teamSelect, setTeamSelect] = useState(null)
     const [playerSelect, setPlayerSelect] = useState(null)
 
@@ -48,13 +46,13 @@ const Team = ({teams, players, loaded, handleTeamSelect, handlePlayerSelect}) =>
         <div className="team-container">
             <label htmlFor="teams">Select Team</label>
             <select onChange={setTeamState} name="teams" id="teams">
-                <option disabled defaultValue selected="defaultValue">Select a Team</option>
+                <option disabled defaultValue>Select a Team</option>
                 {teamOptionNodes}
             </select>
 
             <label htmlFor="players">Select Player</label>
             <select onChange={setPlayerState} name="players" id="players">
-                <option disabled defaultValue selected="defaultValue">Select a Player</option>
+                <option disabled defaultValue>Select a Player</option>
                 {playerOptionNodes}
             </select>
         </div>

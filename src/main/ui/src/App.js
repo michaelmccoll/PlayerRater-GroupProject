@@ -5,6 +5,7 @@ import {useState,useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch}  from 'react-router-dom';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
+import Menu from './components/Menu';
 import Team from './containers/Team';
 import Stats from './containers/Stats';
 import Rater from './containers/Rater';
@@ -70,6 +71,10 @@ function App() {
 
       <Route path="/profile" component={Profile}>
         <Profile playerId={playerSelect} teamId={teamSelect}/>
+      </Route>
+
+      <Route path="/menu">
+        <Menu/>
       </Route>
 
       <Route component={Error}/>

@@ -1,16 +1,16 @@
 import RaterPlayer from "./RaterPlayer";
 
-const RaterList = ({teamsheet}) => {
+const RaterList = ({teamsheet, handleChange}) => {
 
     const raterNodes = teamsheet.map(team => {
         return(
-            <RaterPlayer team={team} key={team.id}></RaterPlayer>
+            <RaterPlayer team={team} key={team.id} handleChange={handleChange}></RaterPlayer>
         )
     })
     return(
         <>
             {raterNodes}
-            <button>Submit</button>
+            {/* <button>Submit</button> */}
         </>
     )
 }

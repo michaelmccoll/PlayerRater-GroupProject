@@ -3,7 +3,7 @@ import {useState} from 'react';
 import './Rater.css';
 import RaterList from '../components/RaterList';
 
-const Rater = () => {
+const Rater = ({teamId,playerId}) => {
 
     const [teamsheet,setTeamsheet] = useState(
         [

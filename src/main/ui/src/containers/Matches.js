@@ -3,7 +3,7 @@ import React from 'react';
 import './Matches.css';
 import MatchList from '../components/MatchList';
 
-const Matches = () => {
+const Matches = ({teamId,playerId}) => {
 
     const [matches, setMatch] = useState([])
     const [loaded, setLoaded] = useState(false);
@@ -17,7 +17,7 @@ const Matches = () => {
 
     useEffect(()=>{
         getMatches();
-    })
+    },[])
 
     return(
         <>
@@ -28,28 +28,3 @@ const Matches = () => {
 }
 
 export default Matches;
-
-
-// [
-//     {id: 1,
-//     opposition: "Gorgie FC",
-//     venue: true,
-//     home_score: 2,
-//     away_score: 3,
-//     team: "Leith Walkers"
-//     },
-//     {id: 2,
-//     opposition: "Stockbridge Utd",
-//     venue: false,
-//     home_score: 4,
-//     away_score: 1,
-//     team: "Leith Walkers"
-//     },
-//     {id: 3,
-//     opposition: "Portobello Pirates",
-//     venue: true,
-//     home_score: 2,
-//     away_score: 3,
-//     team: "Leith Walkers",
-//     }
-// ]

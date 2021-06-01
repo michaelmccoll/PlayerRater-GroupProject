@@ -1,21 +1,7 @@
 import React from 'react';
 import './Profile.css';
 
-const Profile = () => {
-
-    // const [profile,setProfile] = useState()
-    // const [loaded, setLoaded] = useState(false);
-
-    // const getTeamsheet = () => {
-    //     fetch(`https://localhost:8080/players/{id}`)
-    //     .then(res => res.json())
-    //     .then(data => setProfile(data))
-    //     .then(() => setLoaded(true))
-    // }
-
-    // useEffect(()=>{
-    //     getProfile();
-    // })
+const Profile = ({teamId,playerId}) => {
 
     return(
         <>

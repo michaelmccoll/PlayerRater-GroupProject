@@ -10,7 +10,6 @@ const RaterList = ({teamsheet, handleChange}) => {
     return(
         <>
             {raterNodes}
-            {/* <button>Submit</button> */}
         </>
     )
 }

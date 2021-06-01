@@ -49,7 +49,7 @@ public class Match {
     private Integer awayScore;
 
     @ManyToMany
-    @JsonIgnoreProperties({"matches"})
+    @JsonIgnoreProperties({"matches, player"})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinTable(
             name = "stats_matches",
@@ -144,4 +144,28 @@ public class Match {
     public void addStatsToMatch(Stats stats){
         this.stats.add(stats);
     }
+
+    public Boolean getHomeTeam() {
+        return homeTeam;
+    }
+
+    public void setHomeTeam(Boolean homeTeam) {
+        this.homeTeam = homeTeam;
+    }
+
+//    public Team getTeam() {
+//        return team;
+//    }
+//
+//    public void setTeam(Team team) {
+//        this.team = team;
+//    }
+
+//    public List<Rating> getRatings() {
+//        return ratings;
+//    }
+//
+//    public void setRatings(List<Rating> ratings) {
+//        this.ratings = ratings;
+//    }
 }

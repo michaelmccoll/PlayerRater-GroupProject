@@ -1,13 +1,7 @@
 package PlayerRater.PlayerRater.components;
 
-import PlayerRater.PlayerRater.models.Match;
-import PlayerRater.PlayerRater.models.Player;
-import PlayerRater.PlayerRater.models.Stats;
-import PlayerRater.PlayerRater.models.Team;
-import PlayerRater.PlayerRater.repositories.MatchRepository;
-import PlayerRater.PlayerRater.repositories.PlayerRepository;
-import PlayerRater.PlayerRater.repositories.StatsRepository;
-import PlayerRater.PlayerRater.repositories.TeamRepository;
+import PlayerRater.PlayerRater.models.*;
+import PlayerRater.PlayerRater.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -30,23 +24,39 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     StatsRepository statsRepository;
 
+    @Autowired
+    RatingRepository ratingRepository;
+
     public DataLoader() {
 
     }
     public void run(ApplicationArguments args){
 
-        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs", Color.green,Color.WHITE,null);
+        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs", "#009933","#FFFFFF",null);
         teamRepository.save(team1);
-        Team team2 = new Team("Gorgie F.C.","Murrayfield","Edinburgh Amateurs",Color.MAGENTA,Color.GRAY,null);
+        Team team2 = new Team("Gorgie F.C.","Murrayfield","Edinburgh Amateurs","#FF00FF","#808080",null);
         teamRepository.save(team2);
-        Team team3 = new Team("Queensferry Park Rangers","Forth Stadium","Edinburgh Amateurs",Color.BLUE,Color.BLACK,null);
+        Team team3 = new Team("Queensferry Park Rangers","Forth Stadium","Edinburgh Amateurs","#0000FF","#000000",null);
         teamRepository.save(team3);
-        Team team4 = new Team("Stockbridge United","Raeburn","Edinburgh Amateurs",Color.yellow,Color.pink,null);
+        Team team4 = new Team("Stockbridge United","Raeburn","Edinburgh Amateurs","#FFFF00","#FFC0CB",null);
         teamRepository.save(team4);
-        Team team5 = new Team("Portobello Pirates","Joppa","Edinburgh Amateurs",Color.red,Color.black,null);
+        Team team5 = new Team("Portobello Pirates","Joppa","Edinburgh Amateurs","#FF0000","#000000",null);
         teamRepository.save(team5);
-        Team team6 = new Team("Morningsliders","Colinton","Edinburgh Amateurs",Color.orange,Color.CYAN,null);
+        Team team6 = new Team("Morningsliders","Colinton","Edinburgh Amateurs","#FFA500","#00FFFF",null);
         teamRepository.save(team6);
+
+//        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs",null);
+//        teamRepository.save(team1);
+//        Team team2 = new Team("Gorgie F.C.","Murrayfield","Edinburgh Amateurs",null);
+//        teamRepository.save(team2);
+//        Team team3 = new Team("Queensferry Park Rangers","Forth Stadium","Edinburgh Amateurs",null);
+//        teamRepository.save(team3);
+//        Team team4 = new Team("Stockbridge United","Raeburn","Edinburgh Amateurs",null);
+//        teamRepository.save(team4);
+//        Team team5 = new Team("Portobello Pirates","Joppa","Edinburgh Amateurs",null);
+//        teamRepository.save(team5);
+//        Team team6 = new Team("Morningsliders","Colinton","Edinburgh Amateurs",null);
+//        teamRepository.save(team6);
 
         Player player1 = new Player("Lionel","Messi",33,"Forward",Boolean.FALSE,team1);
         playerRepository.save(player1);
@@ -77,7 +87,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addPlayerToTeam(player7);
         teamRepository.save(team1);
 
-        Match match1 = new Match("Gorgie F.C.","Murrayfield",3,2,team1);
+        Match match1 = new Match("Gorgie F.C.",true,3,2,team1);
         match1.addPlayerToTeamsheet(player1);
         match1.addPlayerToTeamsheet(player4);
         match1.addPlayerToTeamsheet(player5);
@@ -87,7 +97,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match1);
         teamRepository.save(team1);
 
-        Match match2 = new Match("Queensferry Park Rangers","Forth Stadium",1,2,team1);
+        Match match2 = new Match("Queensferry Park Rangers",true,1,2,team1);
         match2.addPlayerToTeamsheet(player1);
         match2.addPlayerToTeamsheet(player2);
         match2.addPlayerToTeamsheet(player3);
@@ -97,7 +107,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match2);
         teamRepository.save(team1);
 
-        Match match3 = new Match("Stockbridge United","Raeburn",2,2,team1);
+        Match match3 = new Match("Stockbridge United",false,2,2,team1);
         match3.addPlayerToTeamsheet(player1);
         match3.addPlayerToTeamsheet(player2);
         match3.addPlayerToTeamsheet(player3);
@@ -107,7 +117,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match3);
         teamRepository.save(team1);
 
-        Match match4 = new Match("Portobello Pirates","Joppa",0,2,team1);
+        Match match4 = new Match("Portobello Pirates",true,0,2,team1);
         match4.addPlayerToTeamsheet(player1);
         match4.addPlayerToTeamsheet(player2);
         match4.addPlayerToTeamsheet(player4);
@@ -117,7 +127,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match4);
         teamRepository.save(team1);
 
-        Match match5 = new Match("Morningsliders","Colinton",4,3,team1);
+        Match match5 = new Match("Morningsliders",true,4,3,team1);
         match5.addPlayerToTeamsheet(player1);
         match5.addPlayerToTeamsheet(player2);
         match5.addPlayerToTeamsheet(player3);
@@ -134,6 +144,8 @@ public class DataLoader implements ApplicationRunner {
         player1.addStatsToPlayer(stat1);
         statsRepository.save(stat1);
 
+        Rating rating1 = new Rating(player1,match1,5);
+        ratingRepository.save(rating1);
     }
 }
 

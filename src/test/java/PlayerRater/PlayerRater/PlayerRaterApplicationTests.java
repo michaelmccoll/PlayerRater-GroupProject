@@ -38,17 +38,17 @@ class PlayerRaterApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
-	public void canGetPlayersByTeamName(){
-		List<Player> found = playerRepository.findPlayersByTeamName("Leith Walkers");
-		assertEquals(7,found.size());
-	}
+//	@Test
+//	public void canGetPlayersByTeamName(){
+//		List<Player> found = playerRepository.findPlayersByTeamName("Leith Walkers");
+//		assertEquals(7,found.size());
+//	}
 
-	@Test
-	public void	canGetMatchesByTeam(){
-		List<Match> found = matchRepository.findMatchesByTeamName("Leith Walkers");
-		assertEquals(5,found.size());
-	}
+//	@Test
+//	public void	canGetMatchesByTeam(){
+//		List<Match> found = matchRepository.findMatchesByTeamName("Leith Walkers");
+//		assertEquals(5,found.size());
+//	}
 
 	@Test
 	public void	canGetTeamsByLeague(){

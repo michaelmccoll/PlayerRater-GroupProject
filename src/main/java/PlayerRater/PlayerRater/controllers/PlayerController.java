@@ -22,13 +22,13 @@ public class PlayerController {
 
     @GetMapping(value = "/players/{id}")
     public ResponseEntity getPlayer(@PathVariable Long id){
-        return new ResponseEntity<>(playerRepository.findById(id), HttpStatus.OK);
+        return new ResponseEntity(playerRepository.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/players")
-    public ResponseEntity<Player> postPlayer(@RequestBody Player player){
+    public ResponseEntity postPlayer(@RequestBody Player player){
         playerRepository.save(player);
-        return new ResponseEntity<>(player,HttpStatus.CREATED);
+        return new ResponseEntity(player,HttpStatus.CREATED);
     }
 
 }

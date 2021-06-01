@@ -12,23 +12,23 @@ const NavBar = () => {
         <ul className="navbar">
         <hr/>
             <li>
-                <Link to="/"><img className="team" src={team}></img></Link>
+                <Link className="nonHighlight" to="/"><img className="team" src={team}></img></Link>
             </li>
     
             <li>
-                <Link to="/stats"><img className="stats" src={stats}></img></Link>
+                <Link className="nonHighlight" to="/stats"><img className="stats" src={stats}></img></Link>
             </li>
         
             <li>
-                <Link to="/rater"><img className="rater" src={rater}></img></Link>
+                <Link className="nonHighlight" to="/rater"><img className="rater" src={rater}></img></Link>
             </li>
 
             <li>
-                <Link to="/matches"><img className="matches" src={matches}></img></Link>
+                <Link className="nonHighlight" to="/matches"><img className="matches" src={matches}></img></Link>
             </li>
 
             <li> 
-                <Link to="/profile"><img className="profile" src={profile}></img></Link>
+                <Link className="nonHighlight" to="/profile"><img className="profile" src={profile}></img></Link>
             </li>
         </ul>
         </>

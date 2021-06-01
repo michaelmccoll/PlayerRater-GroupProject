@@ -5,6 +5,10 @@
     bottom: 0;
     width: 100%;
   }
+
+.nonHighlight{
+  -webkit-tap-highlight-color: transparent;
+}
 ul {
   padding-inline-start: 0px;
   margin-block-start: 10px;

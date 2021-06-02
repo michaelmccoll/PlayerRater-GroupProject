@@ -9,8 +9,6 @@ import Profile from './Profile';
 
 const Team = ({teams, players, loaded, handleTeamSelect, handlePlayerSelect}) => {
 
-     
-
     const [teamSelect, setTeamSelect] = useState(null)
     const [playerSelect, setPlayerSelect] = useState(null)
 

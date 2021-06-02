@@ -10,42 +10,43 @@ const Rater = ({teamId,playerId}) => {
         {id: 1,
         first_name: "Lionel",
         second_name: "Messi",
+        rating: 9
         },
         {id: 2,
         first_name: "Jordi",
         second_name: "Alba",
+        rating: 6
         },
         {id: 3,
         first_name: "David",
         second_name: "Marshall",
+        rating: 2
         },
         {id: 4,
         first_name: "Andy",
         second_name: "Robertson",
+        rating: 7
         },
         {id: 5,
         first_name: "Cristiano",
         second_name: "Ronaldo",
+        rating: 1
         }
     ])
 
-    // const [loaded, setLoaded] = useState(false);
-
-    // const getTeamsheet = () => {
-    //     fetch(`https://localhost:8080/matches/{id}/teamsheet`)
-    //     .then(res => res.json())
-    //     .then(data => setTeamsheet(data))
-    //     .then(() => setLoaded(true))
-    // }
-
-    // useEffect(()=>{
-    //     getTeamsheet();
-    // })
+    const handleRateChange = (newRating, player_id) => {
+        for (const player of teamsheet) {
+            if (player_id === player.id) {
+                player.rating = newRating
+            }
+        }
+        setTeamsheet([...teamsheet])
+    }   
 
     return(
         <>
             <h2>Rate Teammates vs Gorgie FC</h2>
-            <RaterList teamsheet={teamsheet}/>
+            <RaterList teamsheet={teamsheet} handleChange={(newRating, player_id) => handleRateChange(newRating, player_id)}/>
         </>
     )
 }

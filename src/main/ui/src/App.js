@@ -110,7 +110,7 @@ function App() {
       </Route>
 
       <Route path="/addMatch">
-        <AddMatch/>
+        <AddMatch playerId={playerSelect} teamId={teamSelect}/>
       </Route>
       <Route path="/menu">
         <Menu/>

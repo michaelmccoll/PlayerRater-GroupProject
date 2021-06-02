@@ -74,7 +74,7 @@ public class Match {
     private List<Stats> stats;
 
     @ManyToOne
-    @JoinColumn(name="team_id", nullable=false)
+    @JoinColumn(name="team_id")
     @JsonIgnoreProperties({"matches"})
     private Team team;
 

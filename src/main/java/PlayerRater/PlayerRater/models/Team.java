@@ -36,7 +36,7 @@ public class Team {
     private String secondaryColour;
 
     @Column(name="badge")
-    private Blob badge;
+    private String badge;
 
     @OneToMany(mappedBy="team")
     @JsonIgnoreProperties({"teams"})
@@ -46,7 +46,7 @@ public class Team {
     @JsonIgnoreProperties({"teams"})
     private List<Player> players;
 
-    public Team(String name, String location, String league, String primaryColour, String secondaryColour, Blob badge) {
+    public Team(String name, String location, String league, String primaryColour, String secondaryColour, String badge) {
         this.name = name;
         this.location = location;
         this.league = league;
@@ -103,10 +103,10 @@ public class Team {
         this.secondaryColour = secondaryColour;
     }
 
-    public Blob getBadge() {
+    public String getBadge() {
         return badge;
     }
-    public void setBadge(Blob badge) {
+    public void setBadge(String badge) {
         this.badge = badge;
     }
 

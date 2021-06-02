@@ -9,6 +9,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.awt.*;
+import java.nio.file.Paths;
+import java.sql.Blob;
 import java.time.LocalDate;
 
 @Component
@@ -34,7 +36,7 @@ public class DataLoader implements ApplicationRunner {
     }
     public void run(ApplicationArguments args){
 
-        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs", "#009933","#FFFFFF",null);
+        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs", "#009933","#FFFFFF", null);
         teamRepository.save(team1);
         Team team2 = new Team("Gorgie F.C.","Murrayfield","Edinburgh Amateurs","#FF00FF","#808080",null);
         teamRepository.save(team2);

@@ -2,12 +2,14 @@ package PlayerRater.PlayerRater.components;
 
 import PlayerRater.PlayerRater.models.*;
 import PlayerRater.PlayerRater.repositories.*;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.awt.*;
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -87,7 +89,12 @@ public class DataLoader implements ApplicationRunner {
         team1.addPlayerToTeam(player7);
         teamRepository.save(team1);
 
-        Match match1 = new Match("Gorgie F.C.",true,3,2,team1);
+        LocalDate testDate1 = LocalDate.of(2021, 5, 30);
+        LocalDate testDate2 = LocalDate.of(2021, 5, 31);
+        LocalDate testDate3 = LocalDate.of(2021, 6, 1);
+        LocalDate testDate4 = LocalDate.of(2021, 6, 2);
+
+        Match match1 = new Match(testDate1, true, "Gorgie F.C.",true,3,2,team1);
         match1.addPlayerToTeamsheet(player1);
         match1.addPlayerToTeamsheet(player4);
         match1.addPlayerToTeamsheet(player5);
@@ -97,7 +104,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match1);
         teamRepository.save(team1);
 
-        Match match2 = new Match("Queensferry Park Rangers",true,1,2,team1);
+        Match match2 = new Match(testDate1, true,"Queensferry Park Rangers",true,1,2,team1);
         match2.addPlayerToTeamsheet(player1);
         match2.addPlayerToTeamsheet(player2);
         match2.addPlayerToTeamsheet(player3);
@@ -107,7 +114,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match2);
         teamRepository.save(team1);
 
-        Match match3 = new Match("Stockbridge United",false,2,2,team1);
+        Match match3 = new Match(testDate2, true,"Stockbridge United",false,2,2,team1);
         match3.addPlayerToTeamsheet(player1);
         match3.addPlayerToTeamsheet(player2);
         match3.addPlayerToTeamsheet(player3);
@@ -117,7 +124,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match3);
         teamRepository.save(team1);
 
-        Match match4 = new Match("Portobello Pirates",true,0,2,team1);
+        Match match4 = new Match(testDate3, false,"Portobello Pirates",true,0,2,team1);
         match4.addPlayerToTeamsheet(player1);
         match4.addPlayerToTeamsheet(player2);
         match4.addPlayerToTeamsheet(player4);
@@ -127,7 +134,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match4);
         teamRepository.save(team1);
 
-        Match match5 = new Match("Morningsliders",true,4,3,team1);
+        Match match5 = new Match(testDate4, false,"Morningsliders",true,4,3,team1);
         match5.addPlayerToTeamsheet(player1);
         match5.addPlayerToTeamsheet(player2);
         match5.addPlayerToTeamsheet(player3);

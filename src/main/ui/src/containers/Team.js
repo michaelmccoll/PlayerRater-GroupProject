@@ -20,15 +20,12 @@ const Team = ({teams, players, loaded, handleTeamSelect, handlePlayerSelect}) =>
         )
     }
 
-
     const setTeamState = (event) => {
         handleTeamSelect(event.target.value)
     }
     const setPlayerState = (event) => {
         handlePlayerSelect(event.target.value)
     }
-
-   
 
     const teamOptionNodes = teams.map(team => {
         return(

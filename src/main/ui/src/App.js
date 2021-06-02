@@ -10,6 +10,7 @@ import Stats from './containers/Stats';
 import Rater from './containers/Rater';
 import Matches from './containers/Matches';
 import Profile from './containers/Profile';
+import AddMatch from './components/Matches/AddMatch';
 import Error from './containers/Error';
 
 function App() {
@@ -72,8 +73,11 @@ function App() {
         <Profile playerId={playerSelect} teamId={teamSelect}/>
       </Route>
 
+      <Route path="/addMatch">
+        <AddMatch/>
+      </Route>
+
       <Route component={Error}/>
-      
       </Switch>
       </>
     </Router>

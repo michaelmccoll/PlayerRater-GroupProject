@@ -5,6 +5,7 @@ import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.lang.reflect.Array;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +18,12 @@ public class Match {
     @GeneratedValue
     @Column(name = "id")
     private Long id;
+
+    @Column(name = "date")
+    private LocalDate date;
+
+    @Column(name = "ranked")
+    private Boolean ranked;
 
     @Column(name = "opposition")
     private String opposition;
@@ -75,7 +82,9 @@ public class Match {
     @JsonIgnoreProperties({"match"})
     private List<Rating> ratings;
 
-    public Match(String opposition, Boolean homeTeam, Integer homeScore, Integer awayScore, Team team) {
+    public Match(LocalDate date, Boolean ranked, String opposition, Boolean homeTeam, Integer homeScore, Integer awayScore, Team team) {
+        this.date = date;
+        this.ranked = ranked;
         this.opposition = opposition;
         this.homeTeam = homeTeam;
         this.homeScore = homeScore;
@@ -153,7 +162,23 @@ public class Match {
         this.homeTeam = homeTeam;
     }
 
-//    public Team getTeam() {
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Boolean getRanked() {
+        return ranked;
+    }
+
+    public void setRanked(Boolean ranked) {
+        this.ranked = ranked;
+    }
+
+    //    public Team getTeam() {
 //        return team;
 //    }
 //

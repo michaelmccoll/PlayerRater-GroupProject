@@ -1,48 +1,52 @@
 import {useState, useEffect} from 'react';
 import React from 'react';
 import './Profile.css';
+import pic from '../imgs/messi/messi.jpeg';
 
 const Profile = ({profile,playerId}) => {
 
     return(
         <>
-        <div className="profileCard">
-            <div>
-                <h5 className="badge">{profile.first_name}</h5>
-            </div>
+        <div className="profileCardWrapper">
+            <img src={pic}/>
+            <div className="profileCard" style={{borderColor: profile.team.primaryColour}}>
+                <div className="badge">
+                    <h5>{profile.team.name}</h5>
+                </div>
 
-            <div>
-                <h5 className="games">GAMES </h5>
-            </div>
+                <div className="games">
+                    <h5>GAMES </h5>
+                </div>
 
-            <div>
-                <h5 className="goals">GOALS {profile.age}</h5>
-            </div>
-            
-            <div>
-                <h5 className="assists">ASSISTS </h5>
-            </div>
+                <div className="goals">
+                    <h5>GOALS {profile.stats[0].goals}</h5>
+                </div>
+                
+                <div className="assists">
+                    <h5>ASSISTS {profile.stats[0].assists}</h5>
+                </div>
 
-            <div>
-                <h5 className="POTM">POTM</h5>
-            </div>
+                <div className="POTM">
+                    <h5>POTM</h5>
+                </div>
 
-            <div>
-                <h5 className="pic">Picture</h5>
-            </div>
+                <div className="firstName">
+                    <h5>{profile.first_name}</h5>
+                </div>
+                
+                <div className="secondName">
+                    <h5>{profile.second_name}</h5>
+                </div>
 
-            <div>
-                <h5 className="firstName">{profile.first_name}</h5>
+                <div className="position">
+                    <h5>{profile.position}</h5>
+                </div>
+                
+                <div className="rating">
+                    <h5>RATING 8.4</h5>
+                </div>
+                
             </div>
-            
-            <div>
-                <h5 className="secondName">{profile.second_name}</h5>
-            </div>
-            
-            <div>
-                <h5 className="rating">RATING 8.4</h5>
-            </div>
-            
         </div>
         </>
     )

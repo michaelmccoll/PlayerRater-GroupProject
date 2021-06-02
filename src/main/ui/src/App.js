@@ -16,16 +16,20 @@ import Error from './containers/Error';
 
 function App() {
   
-  const [teamSelect, setTeamSelect] = useState(0)
+  const [teamSelect, setTeamSelect] = useState(null)
   const [playerSelect, setPlayerSelect] = useState(0)
   const [teams, setTeams] = useState([])
   const [players, setPlayers] = useState([])
+  const [latestMatch, setLatestMatch] = useState(null)
   const [loaded, setLoaded] = useState(false)
 
   const getTeams = () => {
       fetch(`http://localhost:8080/teams`)
       .then(res => res.json())
-      .then(data => setTeams(data))
+      .then(data => {
+        setTeams(data)
+        setTeamSelect(data[0])
+      })
       .then(() => setLoaded(true))
   }
 
@@ -39,14 +43,47 @@ function App() {
   useEffect(()=>{
       getTeams();
       getPlayers();
+      // getLatestMatch()
   },[])
 
+  useEffect(() => {
+    if (teamSelect) {
+      getLatestMatch()
+    }
+  }, [teamSelect])
+
+
+
+  
+
   const getTeamId = (selectedTeamId) => {
-    setTeamSelect(selectedTeamId)
+    for (const team of teams ) {
+      if (team.id == selectedTeamId) {
+        setTeamSelect(team)
+      }
+    }
   }
+
+  const getLatestMatch = () => {
+    if (teamSelect) {
+      const match = teamSelect.matches.slice(-1)[0]
+      setLatestMatch(match)
+    }
+  }
+
   const getPlayerId = (selectedTeamId) => {
     setPlayerSelect(selectedTeamId)
   }
+
+  const handleRateChange = (newRating, player_id) => {
+    for (const player of players) {
+        if (player_id === player.id) {
+            player.ratings.push(newRating)
+        }
+    }
+    console.log(newRating, player_id);
+    setPlayers([...players])
+}   
 
   return (
     <Router>
@@ -63,7 +100,7 @@ function App() {
       </Route>
 
       <Route path="/rater">
-        <Rater playerId={playerSelect} teamId={teamSelect}/>
+        <Rater playerId={playerSelect} match={latestMatch} handleChange={(newRating, player_id) => handleRateChange(newRating, player_id)}/>
       </Route>
 
       <Route path="/matches" component={Matches}>

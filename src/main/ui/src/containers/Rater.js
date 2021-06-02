@@ -15,7 +15,7 @@ const Rater = ({match, handleChange}) => {
     return(
         <>
             <h2>Rate Teammates vs Gorgie FC</h2>
-            <RaterList teamsheet={match.teamsheet} handleChange={handleChange}/>
+            <RaterList teamsheet={match.teamsheet} match={match} handleChange={handleChange}/>
         </>
     )
 }

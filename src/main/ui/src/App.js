@@ -11,6 +11,8 @@ import Stats from './containers/Stats';
 import Rater from './containers/Rater';
 import Matches from './containers/Matches';
 import Profile from './containers/Profile';
+import AddTeam from './components/Teams/AddTeam';
+import AddPlayer from './components/Players/AddPlayer';
 import AddMatch from './components/Matches/AddMatch';
 import Error from './containers/Error';
 
@@ -74,14 +76,33 @@ function App() {
   }
 
   const handleRateChange = (newRating, player_id) => {
+    let playerToBeRated = null
+    const newPlayers = []
     for (const player of players) {
         if (player_id === player.id) {
             player.ratings.push(newRating)
+            playerToBeRated = player
         }
+        newPlayers.push(player)
     }
     console.log(newRating, player_id);
-    setPlayers([...players])
+    setPlayers(newPlayers)
+    addRating(newRating, playerToBeRated)
 }   
+
+  const addRating = (rating, player) => {
+    fetch('http://localhost:8080/ratings', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          player: {id: player.id},
+          match: {id: latestMatch.id},
+          rating: rating
+        })
+      })
+      .then(response=>response.json())
+      .then(result=>{console.log(result)})
+      .then(getPlayers())}
 
   return (
     <Router>
@@ -109,9 +130,18 @@ function App() {
         <Profile profile={playerSelect} teamId={teamSelect}/>
       </Route>
 
+      <Route path="/addTeam">
+        <AddTeam playerId={playerSelect} teamId={teamSelect}/>
+      </Route>
+
+      <Route path="/addPlayer">
+        <AddPlayer playerId={playerSelect} teamId={teamSelect}/>
+      </Route>
+
       <Route path="/addMatch">
         <AddMatch playerId={playerSelect} teamId={teamSelect}/>
       </Route>
+
       <Route path="/menu">
         <Menu/>
       </Route>

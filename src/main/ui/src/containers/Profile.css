@@ -114,6 +114,9 @@
 .profileCard{
     display: grid;
     background-color: red;
+    background-image: url('../imgs/messi/messi.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
     border-style: solid;
     border-color: black;
     border-width: 20px;

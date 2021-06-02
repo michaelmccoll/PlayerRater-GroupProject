@@ -9,8 +9,18 @@ const RaterPlayer = ({player, handleChange}) => {
         handleChange(event, player.id)
     }
 
-
-
+    // const addRating = (player) => {
+    //     fetch('localhost:3000/ratings', {
+    //         method: 'post',
+    //         headers: {'Content-Type': 'application/json'},
+    //         body: JSON.stringify({
+    //           player: player,
+    //           match: match,
+    //           rating: rating
+    //         })
+    //       })
+    //       .then(response=>response.json())
+    //       .then(data=>{})}
 
     return(
         <>

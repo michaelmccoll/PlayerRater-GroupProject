@@ -2,12 +2,13 @@ import React from 'react';
 import {useState} from 'react';
 import './Rater.css';
 import RaterList from '../components/RaterList';
+import Error from '../containers/Error';
 
 const Rater = ({match, handleChange}) => {
 
     if(!match) {
         return (
-            <p>....what the fuck are you doing</p>
+            <Error/>
         )
     }
 

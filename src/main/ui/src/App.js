@@ -36,14 +36,16 @@ function App() {
   const getPlayers = () => {
       fetch(`http://localhost:8080/players`)
       .then(res => res.json())
-      .then(data => setPlayers(data))
+      .then(data =>{
+        setPlayers(data)
+        setPlayerSelect(data[0])
+      } )
       .then(() => setLoaded(true))
   }
 
   useEffect(()=>{
       getTeams();
       getPlayers();
-      // getLatestMatch()
   },[])
 
   useEffect(() => {
@@ -51,10 +53,6 @@ function App() {
       getLatestMatch()
     }
   }, [teamSelect])
-
-
-
-  
 
   const getTeamId = (selectedTeamId) => {
     for (const team of teams ) {
@@ -108,7 +106,7 @@ function App() {
       </Route>
 
       <Route path="/profile" component={Profile}>
-        <Profile playerId={playerSelect} teamId={teamSelect}/>
+        <Profile profile={playerSelect} teamId={teamSelect}/>
       </Route>
 
       <Route path="/addMatch">

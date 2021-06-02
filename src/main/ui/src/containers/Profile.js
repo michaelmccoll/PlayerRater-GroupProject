@@ -2,27 +2,13 @@ import {useState, useEffect} from 'react';
 import React from 'react';
 import './Profile.css';
 
-const Profile = ({teamId,playerId}) => {
-
-    const [profile,setProfile] = useState([])
-    const [loaded, setLoaded] = useState(false);
-
-    const getProfile = () => {
-        fetch(`http://localhost:8080/players/${playerId}`)
-        .then(res => res.json())
-        .then(data => setProfile(data))
-        .then(() => setLoaded(true))
-    }
-
-    useEffect(()=>{
-        getProfile();
-    },[])
+const Profile = ({profile,playerId}) => {
 
     return(
         <>
         <div className="profileCard">
             <div>
-                <h5 className="badge">{profile.team.name}</h5>
+                <h5 className="badge">{profile.first_name}</h5>
             </div>
 
             <div>

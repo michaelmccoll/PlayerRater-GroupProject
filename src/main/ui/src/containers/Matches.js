@@ -43,8 +43,9 @@ const Matches = ({teamId, playerId}) => {
 
     return(
         <>
-            <h2>Latest Matches</h2>
+            <h2>Matches</h2>
             <MatchList matches={matches} teamName={teamName}/>
+            <hr/>
         </>
     )
 }

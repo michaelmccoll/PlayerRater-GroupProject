@@ -31,4 +31,10 @@ public class MatchController {
         return new ResponseEntity<>(match,HttpStatus.CREATED);
     }
 
+//    @PostMapping(value = "/matches/{id}")
+//    public ResponseEntity<Match> updateMatch(@RequestBody Match match){
+//        matchRepository.merge(match);
+//        return new ResponseEntity<>(match,HttpStatus.CREATED);
+//    }
+
 }

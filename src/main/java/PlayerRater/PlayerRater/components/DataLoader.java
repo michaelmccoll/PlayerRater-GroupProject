@@ -96,7 +96,7 @@ public class DataLoader implements ApplicationRunner {
         LocalDate testDate3 = LocalDate.of(2021, 6, 1);
         LocalDate testDate4 = LocalDate.of(2021, 6, 2);
 
-        Match match1 = new Match(testDate1, true, "Gorgie F.C.",true,3,2,team1);
+        Match match1 = new Match(testDate1, true, "Gorgie F.C.",true,3,0,team1);
         match1.addPlayerToTeamsheet(player1);
         match1.addPlayerToTeamsheet(player4);
         match1.addPlayerToTeamsheet(player5);
@@ -126,7 +126,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match3);
         teamRepository.save(team1);
 
-        Match match4 = new Match(testDate3, false,"Portobello Pirates",true,0,2,team1);
+        Match match4 = new Match(testDate3, true,"Portobello Pirates",true,0,2,team1);
         match4.addPlayerToTeamsheet(player1);
         match4.addPlayerToTeamsheet(player2);
         match4.addPlayerToTeamsheet(player4);
@@ -136,7 +136,7 @@ public class DataLoader implements ApplicationRunner {
         team1.addMatchToTeam(match4);
         teamRepository.save(team1);
 
-        Match match5 = new Match(testDate4, false,"Morningsliders",true,4,3,team1);
+        Match match5 = new Match(testDate4, false,"Morningsliders",true,null,null,team1);
         match5.addPlayerToTeamsheet(player1);
         match5.addPlayerToTeamsheet(player2);
         match5.addPlayerToTeamsheet(player3);

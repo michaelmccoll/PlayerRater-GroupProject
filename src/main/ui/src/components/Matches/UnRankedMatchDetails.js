@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 import './MatchDetails.css';
 
 const UnRankedMatchDetails = ({match, teamName}) =>{
@@ -8,11 +10,20 @@ const UnRankedMatchDetails = ({match, teamName}) =>{
         )
     }
 
+    if (match.homeScore === null){
+        return(
+            <>
+                <Link to={`/editmatch/${match.id}`}><h4>{teamName} - {match.opposition}</h4></Link>
+            </>
+        )
+    }
+
     if (!match.homeTeam){
         return(
         <>
             <hr/>
             <h4>{teamName} {match.homeScore} - {match.awayScore} {match.opposition}</h4>
+            <hr/>
         </>
         )
     }

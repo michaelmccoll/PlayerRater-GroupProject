@@ -7,7 +7,7 @@ const Stats = ({teamId,playerId}) => {
     const [stats,setStats] = useState([])
     const [loaded, setLoaded] = useState(false);
 
-    const statsNodes = teamId.map(player => {
+    const statsNodes = teamId.teamsheet.map(player => {
         return(
             <tr>
             <td>{player.first_name} {player.second_name}</td>

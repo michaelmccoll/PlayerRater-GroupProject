@@ -54,7 +54,7 @@ function App() {
     if (teamSelect) {
       getLatestMatch()
     }
-  }, [teamSelect])
+  }, [teamSelect, teams])
 
   const getTeamId = (selectedTeamId) => {
     for (const team of teams ) {
@@ -67,6 +67,7 @@ function App() {
   const getLatestMatch = () => {
     if (teamSelect) {
       const match = teamSelect.matches.slice(-1)[0]
+      console.log(match)
       setLatestMatch(match)
     }
   }
@@ -101,8 +102,11 @@ function App() {
         })
       })
       .then(response=>response.json())
-      .then(result=>{console.log(result)})
-      .then(getPlayers())}
+      .then(getPlayers)
+      .then(() => {
+        getTeams()
+      })
+    }
 
   return (
     <Router>
@@ -119,7 +123,7 @@ function App() {
       </Route>
 
       <Route path="/rater">
-        <Rater playerId={playerSelect} match={latestMatch} handleChange={(newRating, player_id) => handleRateChange(newRating, player_id)}/>
+        <Rater match={latestMatch} handleChange={(newRating, player_id) => handleRateChange(newRating, player_id)}/>
       </Route>
 
       <Route path="/matches" component={Matches}>

@@ -52,7 +52,7 @@ public class Team {
         this.league = league;
         this.primaryColour = primaryColour;
         this.secondaryColour = secondaryColour;
-        this.badge = null;
+        this.badge = badge;
         this.matches = new ArrayList<>();
         this.players = new ArrayList<>();
     }

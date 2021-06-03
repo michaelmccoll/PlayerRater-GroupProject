@@ -1,22 +1,61 @@
 import {useState} from 'react';
 import './AddPlayer.css';
 
-const AddPlayer =()=>{
+const AddPlayer =({teams})=>{
 
-    const [newPlayerForm,setNewPlayerForm] = useState({
-        newPlayerFirstName:'',
-        newPlayerSecondName:'',
-        newPlayerAge:'',
-        newPlayerPosition:'',
-        newPlayerManagement:'',
-        newPlayerTeam:''
-    })
+    const [firstName, setNewFirstName] = useState()
+    const [secondName, setNewSecondName] = useState()
+    const [age, setNewAge] = useState()
+    const [position, setNewPosition] = useState()
+    const [management, setNewManagement] = useState(null)
+    const [team, setNewTeam] = useState()
 
-    const handlePlayerSubmit =(event) => {
-        const newState = {...newPlayerForm};
-        newState[event.target.name] = parseInt(event.target.value);
-        setNewPlayerForm(newState);
+    const setFirstName = (event) => {
+        setNewFirstName(event.target.value)
     }
+    const setSecondName = (event) => {
+        setNewSecondName(event.target.value)
+    }
+    const setAge = (event) => {
+        setNewAge(event.target.value)
+    }
+    const setPosition = (event) => {
+        setNewPosition(event.target.value)
+    }
+    const setManagement = (event) => {
+        setNewManagement(event.target.value)
+    }
+    const setTeam = (event) => {
+        setNewTeam(event.target.value)
+    }
+
+    const teamOptionNodes = teams.map(team => {
+        return(
+            <option placeholder="Select Your Team" key={team.id} value={team.id}>{team.name}</option>
+        )
+      })
+
+    const addPlayer = (team) => {
+        fetch('http://localhost:8080/players', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                first_name: firstName,
+                second_name: secondName,
+                age: age,
+                position: position,
+                management: management,
+                team: {id: team.id}
+            })
+          })
+          .then(response=>response.json())
+          .then(result=>{console.log('Success', result)})}
+          
+    // const handlePlayerSubmit =(event) => {
+    //     const newState = {...newPlayerForm};
+    //     newState[event.target.name] = parseInt(event.target.value);
+    //     setNewPlayerForm(newState);
+    // }
 
     return(
         <>
@@ -24,29 +63,34 @@ const AddPlayer =()=>{
             <form>
                 <div>
                     <label htmlFor="newPlayerFirstName">First Name: </label>
-                    <input type="text" name="newPlayerFirstName" id="newPlayerFirstName" />
+                    <input onChange={setFirstName} type="text" name="newPlayerFirstName" id="newPlayerFirstName" />
                 </div>
                 <div>
                     <label htmlFor="newPlayerSecondName">Second Name: </label>
-                    <input type="text" name="newPlayerSecondName" id="newPlayerSecondName" />
+                    <input onChange={setSecondName} type="text" name="newPlayerSecondName" id="newPlayerSecondName" />
                 </div>
                 <div>
                     <label htmlFor="newPlayerAge">Age: </label>
-                    <input type="text" name="newPlayerAge" id="newPlayerAge" />
+                    <input onChange={setAge} type="number" min="5" max="100" name="newPlayerAge" id="newPlayerAge" />
                 </div>
                 <div>
                     <label htmlFor="newPlayerPosition">Position: </label>
-                    <input type="text" name="newPlayerPosition" id="newPlayerPosition" />
+                    <input onChange={setPosition} type="text" name="newPlayerPosition" id="newPlayerPosition" />
                 </div>
-                <div>
+                {/* <div>
                     <label htmlFor="newPlayerManagement">Management?: </label>
-                    <input type="text" name="newPlayerManagement" id="newPlayerManagement" />
-                </div>
+                    <input onChange={setManagement} type="checkbox" name="newPlayerManagement" id="newPlayerManagement" />
+                </div> */}
+
                 <div>
                     <label htmlFor="newPlayerTeam">Team: </label>
-                    <input type="text" name="newPlayerTeam" id="newPlayerTeam" />
+                    <select onChange={setTeam} name="newPlayerTeam" id="newPlayerTeam">
+                        <option disabled defaultValue selected="defaultValue">Select a Team</option>
+                        {teamOptionNodes}
+                    </select>
                 </div>
-                <input onClick={handlePlayerSubmit} type="submit" value="submit"></input>
+
+                <input class="submit" onClick={addPlayer} type="submit" value="Submit"></input>
             </form>
         </>
     )

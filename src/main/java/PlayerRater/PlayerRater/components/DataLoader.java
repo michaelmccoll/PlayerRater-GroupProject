@@ -36,17 +36,17 @@ public class DataLoader implements ApplicationRunner {
     }
     public void run(ApplicationArguments args){
 
-        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs", "#009933","#FFFFFF", null);
+        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs", "#009933","#FFFFFF", "https://image.shutterstock.com/image-vector/soccer-football-badge-logo-green-600w-1657859611.jpg");
         teamRepository.save(team1);
-        Team team2 = new Team("Gorgie F.C.","Murrayfield","Edinburgh Amateurs","#FF00FF","#808080",null);
+        Team team2 = new Team("Gorgie F.C.","Murrayfield","Edinburgh Amateurs","#FF00FF","#808080","https://image.shutterstock.com/image-vector/jaguar-icon-football-logo-design-600w-1491309332.jpg");
         teamRepository.save(team2);
-        Team team3 = new Team("Queensferry Park Rangers","Forth Stadium","Edinburgh Amateurs","#0000FF","#000000",null);
+        Team team3 = new Team("Queensferry Park Rangers","Forth Stadium","Edinburgh Amateurs","#0000FF","#000000","https://image.shutterstock.com/image-vector/soccer-championship-logo-design-600w-712129708.jpg");
         teamRepository.save(team3);
-        Team team4 = new Team("Stockbridge United","Raeburn","Edinburgh Amateurs","#FFFF00","#FFC0CB",null);
+        Team team4 = new Team("Stockbridge United","Raeburn","Edinburgh Amateurs","#FFFF00","#FFC0CB","https://image.shutterstock.com/image-vector/soccer-football-logo-template-vector-600w-1421509361.jpg");
         teamRepository.save(team4);
-        Team team5 = new Team("Portobello Pirates","Joppa","Edinburgh Amateurs","#FF0000","#000000",null);
+        Team team5 = new Team("Portobello Pirates","Joppa","Edinburgh Amateurs","#FF0000","#000000", "https://image.shutterstock.com/image-vector/soccer-football-badge-logo-design-600w-1939560655.jpg");
         teamRepository.save(team5);
-        Team team6 = new Team("Morningsliders","Colinton","Edinburgh Amateurs","#FFA500","#00FFFF",null);
+        Team team6 = new Team("Morningsliders","Colinton","Edinburgh Amateurs","#FFA500","#00FFFF","https://image.shutterstock.com/image-vector/football-badge-logo-set-600w-1110035066.jpg");
         teamRepository.save(team6);
 
 //        Team team1 = new Team("Leith Walkers","Leith Links","Edinburgh Amateurs",null);

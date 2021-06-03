@@ -23,3 +23,22 @@ h2, h3 {
   /* color: rgb(40, 240, 145); */
   text-align: center;
 }
+
+label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10px;
+  text-align:left;
+  color: rgb(1, 160, 232);
+}
+
+input {
+  display:inline-block;
+  margin-left: 10px;       
+  position: relative;
+  text-align:left;
+  justify-content: center;
+  width: 250px;
+  height: 20px;
+}

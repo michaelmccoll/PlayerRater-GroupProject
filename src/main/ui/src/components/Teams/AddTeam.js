@@ -3,20 +3,49 @@ import './AddTeam.css';
 
 const AddTeam =()=>{
 
-    const [newTeamForm,setNewTeamForm] = useState({
-        newTeamName:'',
-        newTeamLocation:'',
-        newTeamLeague:'',
-        newTeamPrimaryColour:'',
-        newTeamSecondaryColour:'',
-        newTeamBadge:''
-    });
+    const [name, setNewTeamName] = useState(null)
+    const [location, setNewTeamLocation] = useState(null)
+    const [league, setNewTeamLeague] = useState(null)
+    const [primaryColour, setNewTeamPrimaryColour] = useState(null)
+    const [secondaryColour, setNewTeamSecondaryColour] = useState(null)
 
-    const handleTeamSubmit =(event) => {
-        const newState = {...newTeamForm};
-        newState[event.target.name] = parseInt(event.target.value);
-        setNewTeamForm(newState);
+    const setTeamName = (event) => {
+        setNewTeamName(event.target.value)
     }
+    const setTeamLocation = (event) => {
+        setNewTeamLocation(event.target.value)
+    }
+    const setTeamLeague = (event) => {
+        setNewTeamLeague(event.target.value)
+    }
+    const setTeamPrimaryColour = (event) => {
+        setNewTeamPrimaryColour(event.target.value)
+    }
+    const setTeamSecondayColour = (event) => {
+        setNewTeamSecondaryColour(event.target.value)
+    }
+
+    const addTeam = (e) => {
+        e.preventDefault()
+        fetch('http://localhost:8080/teams', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                name: name,
+                location: location,
+                league: league,
+                primaryColour: primaryColour,
+                secondaryColour: secondaryColour
+            })
+          })
+          .then(response=>response.json())
+          .then(result=>{console.log('Success', result)})}
+
+    // const handleTeamSubmit =(event) => {
+    //     const newState = {...newTeamForm};
+    //     newState[event.target.name] = parseInt(event.target.value);
+    //     setNewTeamForm(newState);
+    // }
 
     return(
         <>
@@ -24,29 +53,29 @@ const AddTeam =()=>{
             <form>
                 <div>
                     <label htmlFor="newTeamName">Team Name: </label>
-                    <input type="text" name="newTeamName" id="newTeamName" />
+                    <input onChange={setTeamName} type="text" name="newTeamName" id="newTeamName"/>
                 </div>
                 <div>
                     <label htmlFor="newTeamLocation">Location: </label>
-                    <input type="text" name="newTeamLocation" id="newTeamLocation" />
+                    <input onChange={setTeamLocation} type="text" name="newTeamLocation" id="newTeamLocation"/>
                 </div>
                 <div>
                     <label htmlFor="newTeamLeague">League: </label>
-                    <input type="text" name="newTeamLeague" id="newTeamLeague" />
+                    <input onChange={setTeamLeague} type="text" name="newTeamLeague" id="newTeamLeague" selected="Edinburgh Amateurs"/>
                 </div>
                 <div>
                     <label htmlFor="newTeamPrimaryColour">Primary colour: </label>
-                    <input type="text" name="newTeamPrimaryColour" id="newTeamPrimaryColour" />
+                    <input className="colour" onChange={setTeamPrimaryColour} type="color" name="newTeamPrimaryColour" id="newTeamPrimaryColour"/>
                 </div>
                 <div>
                     <label htmlFor="newTeamSecondaryColour">Secondary Colour: </label>
-                    <input type="text" name="newTeamSecondaryColour" id="newTeamSecondaryColour" />
+                    <input className="colour" onChange={setTeamSecondayColour} type="color" name="newTeamSecondaryColour" id="newTeamSecondaryColour" />
                 </div>
                 <div>
                     <label htmlFor="newTeamBadge">Badge: </label>
                     <input type="text" name="newTeamBadge" id="newTeamBadge" />
                 </div>
-                <input onClick={handleTeamSubmit} type="submit" value="submit"></input>
+                <input class="submit" onClick={addTeam} onChange={addTeam} type="submit" value="Submit"></input>
             </form>
         </>
     )

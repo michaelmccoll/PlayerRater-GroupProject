@@ -135,7 +135,7 @@ function App() {
       </Route>
 
       <Route path="/addPlayer">
-        <AddPlayer playerId={playerSelect} teamId={teamSelect}/>
+        <AddPlayer playerId={playerSelect} teamId={teamSelect} teams={teams}/>
       </Route>
 
       <Route path="/addMatch">

@@ -11,7 +11,7 @@ const Profile = ({profile,playerId}) => {
             <img src={pic}/>
             <div className="profileCard" style={{borderColor: profile.team.primaryColour}}>
                 <div className="badge">
-                    <h5>{profile.team.name}</h5>
+                    <img className="badge" src={profile.team.badge}/>
                 </div>
 
                 <div className="games">

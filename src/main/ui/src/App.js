@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from 'react';
-import {useState,useEffect} from 'react';
+import {useState,useEffect, useRef} from 'react';
 import {BrowserRouter as Router, Route, Switch}  from 'react-router-dom';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
@@ -14,9 +14,17 @@ import Profile from './containers/Profile';
 import AddTeam from './components/Teams/AddTeam';
 import AddPlayer from './components/Players/AddPlayer';
 import AddMatch from './components/Matches/AddMatch';
+import EditMatch from './components/Matches/EditMatch';
 import Error from './containers/Error';
 
+import { useDetectOutsideClick } from "./useDetectOutsideClick";
+import menu from './imgs/icons/menu.png'
+
 function App() {
+
+  const dropdownRef = useRef(null);
+  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
+  const onClick = () => setIsActive(!isActive);
   
   const [teamSelect, setTeamSelect] = useState(null)
   const [playerSelect, setPlayerSelect] = useState(0)
@@ -145,14 +153,40 @@ function App() {
       <Route path="/addMatch">
         <AddMatch playerId={playerSelect} teamId={teamSelect}/>
       </Route>
-
-      <Route path="/menu">
+      {/* <Route path="/menu">
         <Menu/>
+      </Route> */}
+
+      <Route path="/editMatch/:id">
+        <EditMatch playerId={playerSelect} teamId={teamSelect}/>
       </Route>
 
       <Route component={Error}/>
       </Switch>
-      </>
+      
+    
+    <div className="container">
+      <div className="menu-container">
+          <img onClick={onClick} className="menu-trigger" src={menu}/>
+        <nav
+          ref={dropdownRef}
+          className={`menu ${isActive ? "active" : "inactive"}`}
+        >
+          <ul>
+            <li>
+              <a href="/addMatch">Add Match</a>
+            </li>
+            <li>
+              <a href="/addPlayer">add Player</a>
+            </li>
+            <li>
+              <a href="/addTeam">add Team</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    </>
     </Router>
   );
 }

@@ -7,7 +7,7 @@ const Header = () => {
     return(
         <>
             <img className="logo" src={logo}></img>
-            <Link className="nonHighlight" to="/menu"><img className="menu" src={menu}></img></Link>
+            {/* <Link className="nonHighlight" to="/menu"><img className="menu" src={menu}></img></Link> */}
             <hr />
         </>
     )

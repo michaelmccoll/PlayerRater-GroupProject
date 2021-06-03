@@ -1,14 +1,14 @@
 import {useState} from 'react';
+import './MatchDetails.css';
 
 const AddMatch = ({teamId, playerId}) => {
 
-    const [postId, setPostId] = useState(null)
     const [date, setDate] = useState(null)
     const [ranked, setRanked] = useState(false)
     const [opposition, setOpposition] = useState(null)
     const [homeTeam, setHomeTeam] = useState(null)
-    const [homeScore, setHomeScore] = useState(0)
-    const [awayScore, setAwayScore] = useState(0)
+    const [homeScore, setHomeScore] = useState(null)
+    const [awayScore, setAwayScore] = useState(null)
     const [teamsheet, setTeamsheet] = useState(null)
     const [stats, setStats] = useState(null)
     const [team, setTeam] = useState(null)
@@ -66,7 +66,7 @@ const AddMatch = ({teamId, playerId}) => {
                     <label htmlFor="newMatchHomeTeam">Home Team?: </label>
                     <input onChange={setHomeTeamState} type="checkbox" name="newMatchHomeTeam" id="newMatchHomeTeam"/>
                 </div>
-                <input onClick={addMatch} type="submit" value="submit"></input>
+                <button class="add-match-button" onClick={addMatch} type="submit" value="submit"></button>
             </form>
 
         </>

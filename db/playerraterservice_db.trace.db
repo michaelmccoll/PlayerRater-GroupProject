@@ -6789,8 +6789,13 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
+<<<<<<< HEAD
 2021-06-02 15:57:16 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-06-02 22:50:14 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -6824,11 +6829,19 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
@@ -6841,8 +6854,13 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
+<<<<<<< HEAD
 2021-06-02 17:12:16 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-06-02 22:50:14 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -6876,11 +6894,19 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
@@ -6893,6 +6919,7 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
+<<<<<<< HEAD
 2021-06-03 00:06:42 jdbc[45]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-200]
 	at org.h2.message.DbException.get(DbException.java:205)
@@ -7335,6 +7362,10 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	... 28 more
 2021-06-03 00:54:21 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-06-03 08:44:56 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -7368,11 +7399,19 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
@@ -7385,8 +7424,13 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
+<<<<<<< HEAD
 2021-06-03 01:13:14 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-06-03 08:44:56 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -7420,11 +7464,19 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
@@ -7437,8 +7489,13 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
+<<<<<<< HEAD
 2021-06-03 10:49:05 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-06-03 10:03:49 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -7472,11 +7529,19 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
@@ -7489,8 +7554,13 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
+<<<<<<< HEAD
 2021-06-03 10:57:37 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-06-03 10:53:04 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -7524,11 +7594,19 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/michaelmccoll/projects/final_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/lukeconstable/CodeClan/projects/java_project/PlayerRater/db/playerraterservice_db.mv.db [1.4.200/7]
+>>>>>>> 1065248acfe8a17447b72502bb31a31e9d47693b
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)

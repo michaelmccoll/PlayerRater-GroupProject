@@ -66,7 +66,7 @@ const AddMatch = ({teamId, playerId}) => {
                     <label htmlFor="newMatchHomeTeam">Home Team?: </label>
                     <input onChange={setHomeTeamState} type="checkbox" name="newMatchHomeTeam" id="newMatchHomeTeam"/>
                 </div>
-                <button class="add-match-button" onClick={addMatch} type="submit" value="submit"></button>
+                <input class="submit" onClick={addMatch} type="submit" value="submit"></input>
             </form>
 
         </>

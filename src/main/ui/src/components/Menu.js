@@ -1,32 +1,31 @@
-import {HashRouter, Link} from 'react-router-dom';
-import addTeam from '../imgs/icons/square.png';
-import addPlayer from '../imgs/icons/addUser.png';
-import addMatch from '../imgs/icons/matches.png';
-import {useState} from 'react';
-import {useState, Link, useRef} from 'react';
-import './Menu.css';
+// import {HashRouter, Link} from 'react-router-dom';
+// import addTeam from '../imgs/icons/square.png';
+// import addPlayer from '../imgs/icons/addUser.png';
+// import addMatch from '../imgs/icons/matches.png';
+// import {useState, Link, useRef} from 'react';
+// import './Menu.css';
 
-const Menu = () => {
-    const dropdownRef = useRef(null);
-    const [isActive, setIsActive] = useState(false);
-    const onClick = () => setIsActive(!isActive);
+// const Menu = () => {
+//     const dropdownRef = useRef(null);
+//     const [isActive, setIsActive] = useState(false);
+//     const onClick = () => setIsActive(!isActive);
   
-    return (
-      <div className="menu-container">
-        <button onClick={onClick} className="menu-trigger">
-          <span>User</span>
-          <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg" alt="User avatar" />
-        </button>
-        <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
-          <ul>
-            <Link to={"/addmatch"}><li>Add Match</li></Link>
-            <Link to={"/addplayer"}><li>Add Player</li></Link>
-            <Link to={"/addteam"}><li>Add Team</li></Link>
-          </ul>
-        </nav>
-      </div>
-    );
-  };
+//     return (
+//       <div className="menu-container">
+//         <button onClick={onClick} className="menu-trigger">
+//           <span>User</span>
+//           <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg" alt="User avatar" />
+//         </button>
+//         <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
+//           <ul>
+//             <Link to={"/addmatch"}><li>Add Match</li></Link>
+//             <Link to={"/addplayer"}><li>Add Player</li></Link>
+//             <Link to={"/addteam"}><li>Add Team</li></Link>
+//           </ul>
+//         </nav>
+//       </div>
+//     );
+//   };
 
     // return(
     //     <>
@@ -175,4 +174,4 @@ const Menu = () => {
 //     )
 // }
 
-export default Menu;
+// export default Menu;
